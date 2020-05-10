@@ -58,7 +58,8 @@
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "@react-native-community/blur": "^3.6.0"
   },
   "jest": {
     "preset": "react-native",
@@ -91,7 +92,10 @@
       ]
     }
   },
-  "eslintIgnore": ["node_modules/", "lib/"],
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/"
+  ],
   "prettier": {
     "quoteProps": "consistent",
     "singleQuote": true,
@@ -119,6 +123,15 @@
   "@react-native-community/bob": {
     "source": "src",
     "output": "lib",
-    "targets": ["commonjs", "module", "typescript"]
+    "targets": [
+      "commonjs",
+      "module",
+      "typescript"
+    ]
+  },
+  "dependencies": {
+    "@farfarawaylabs/react-native-hooks": "^0.1.0",
+    "@farfarawaylabs/react-native-layout": "^1.0.0",
+    "@react-native-community/blur": "^3.6.0"
   }
 }

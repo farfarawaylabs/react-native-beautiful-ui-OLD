@@ -9,6 +9,8 @@
     "start": "react-native start"
   },
   "dependencies": {
+    "@farfarawaylabs/react-native-layout": "^1.0.0",
+    "@react-native-community/blur": "^3.6.0",
     "react": "16.11.0",
     "react-native": "0.62.0"
   },

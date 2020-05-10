@@ -1,25 +1,41 @@
-import * as React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import ReactNativeBeautifulUi from '@farfarawaylabs/react-native-beautiful-ui';
+import React, { useState } from 'react';
+import { Button, Text } from 'react-native';
+import { Overlay } from '@farfarawaylabs/react-native-beautiful-ui';
+import { Center } from '@farfarawaylabs/react-native-layout';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    ReactNativeBeautifulUi.multiply(3, 7).then(setResult);
-  }, []);
-
-  return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
-  );
+  return <ShowOverlay />;
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const ShowOverlay = () => {
+  const [visible, setVisible] = useState(false);
+  return (
+    <>
+      <Center vertical horizontal>
+        <Button title="This is just a button" onPress={() => {}} />
+        <Button title="This is just a button" onPress={() => {}} />
+        <Button title="This is just a button" onPress={() => {}} />
+        <Button title="This is just a button" onPress={() => {}} />
+        <Button title="This is just a button" onPress={() => {}} />
+        <Button
+          title="Show Overlay"
+          onPress={() => {
+            setVisible(true);
+          }}
+        />
+      </Center>
+
+      <Overlay visible={visible} blurAmount={8}>
+        <Center horizontal vertical>
+          <Text>Just a random text</Text>
+          <Button
+            title="Hide Overlay"
+            onPress={() => {
+              setVisible(false);
+            }}
+          />
+        </Center>
+      </Overlay>
+    </>
+  );
+};
