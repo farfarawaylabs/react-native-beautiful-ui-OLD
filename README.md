@@ -53,6 +53,49 @@ export default function App() {
 
 ```
 
+## RoundedButton
+
+Simple big roudned buttons allowing you to easily customize them. Main props:
+
+- Title: The button title
+
+- effectType: Choose if the effect the button will use: opacity, highlite or will default to native implementaion
+
+- width: The width of the button
+
+- Height: The height of the button
+
+- backgroundColor: The color of the button
+
+- textColor: The color of the title of the button
+
+- textStyle: Additional styles to add to the title of the button
+
+- style: Allowing you to add or override the button style
+
+<img align="right" width="300" height="600" src="https://github.com/nechmads/demo_images/blob/master/fflabs_react-native-beautiful-ui/RoundedButton.png?raw=true">
+
+```js
+import React, { useState } from 'react';
+import { Button } from '@farfarawaylabs/react-native-beautiful-ui';
+import { View } from 'react-native';
+
+export default function App() {
+  return (
+    <View style={{ marginTop: 200, alignItems: 'center' }}>
+      <RoundedButton
+        backgroundColor="#ffd8a6"
+        title="This is a button"
+        width={300}
+        effectType={ButtonEffectType.Opacity}
+        textColor="#ff427f"
+        onPress={() => {}}
+      />
+    </View>
+  );
+}
+```
+
 ## Contributing
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.

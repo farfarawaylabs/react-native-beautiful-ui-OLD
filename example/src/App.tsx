@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
-import { Button, Text } from 'react-native';
-import { Overlay } from '@farfarawaylabs/react-native-beautiful-ui';
+import { Button, Text, View } from 'react-native';
+import {
+  Overlay,
+  RoundedButton,
+  ButtonEffectType,
+} from '@farfarawaylabs/react-native-beautiful-ui';
 import { Center } from '@farfarawaylabs/react-native-layout';
 
 export default function App() {
-  return <ShowOverlay />;
+  return <ShowRoundedButtons />;
 }
 
 const ShowOverlay = () => {
@@ -37,5 +41,36 @@ const ShowOverlay = () => {
         </Center>
       </Overlay>
     </>
+  );
+};
+
+const ShowRoundedButtons = () => {
+  return (
+    <View style={{ marginTop: 200, alignItems: 'center' }}>
+      <RoundedButton
+        backgroundColor="#ffd8a6"
+        title="This is a button"
+        width={300}
+        effectType={ButtonEffectType.Opacity}
+        textColor="#ff427f"
+        onPress={() => {}}
+      />
+      <RoundedButton
+        backgroundColor="#00005c"
+        title="This is a button"
+        width={300}
+        effectType={ButtonEffectType.Native}
+        textColor="#FFF"
+        onPress={() => {}}
+      />
+      <RoundedButton
+        backgroundColor="#58b4ae"
+        title="This is a button"
+        width={300}
+        effectType={ButtonEffectType.Native}
+        textColor="#ffe277"
+        onPress={() => {}}
+      />
+    </View>
   );
 };
