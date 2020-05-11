@@ -12,7 +12,7 @@ interface BackgroundImageViewProps {
   image: ImageSourcePropType;
 
   /**Additional styles or styles to override default style */
-  style?: ViewStyle;
+  style?: ViewStyle | ViewStyle[];
 }
 
 /**

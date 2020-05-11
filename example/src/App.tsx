@@ -6,11 +6,15 @@ import {
   ButtonEffectType,
   ProfileHeaderOne,
   BackgroundImageView,
+  CoverScreenOne,
+  CoverScreenOneTitle,
+  CoverScreenOneDescription,
+  CoverScreenOneButton,
 } from '@farfarawaylabs/react-native-beautiful-ui';
 import { Center } from '@farfarawaylabs/react-native-layout';
 
 export default function App() {
-  return <ShowBackgroundImageView />;
+  return <ShowCoverScreenOne />;
 }
 
 const ShowOverlay = () => {
@@ -106,5 +110,16 @@ const ShowBackgroundImageView = () => {
         <Text>Just a text</Text>
       </Center>
     </BackgroundImageView>
+  );
+};
+
+const ShowCoverScreenOne = () => {
+  const demoBgImage = require('../demoImages/demoBG.jpg');
+  return (
+    <CoverScreenOne image={demoBgImage}>
+      <CoverScreenOneTitle title="Welcome to the amazing app" />
+      <CoverScreenOneDescription description="Create amazing things using this app. You never seen this before" />
+      <CoverScreenOneButton title="Take me in" />
+    </CoverScreenOne>
   );
 };

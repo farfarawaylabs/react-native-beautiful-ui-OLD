@@ -145,6 +145,35 @@ export default function App() {
 }
 ```
 
+## CoverScreenOne
+
+This component represent a fully designed cover screen. It is built as a composable component so it's easy to configure as needed. Each of the child compoenents can be styled separately or removed all together.
+
+<img align="right" width="300" height="600" src="https://github.com/nechmads/demo_images/blob/master/fflabs_react-native-beautiful-ui/CoverScreenOne.png?raw=true">
+
+```js
+import React, { useState } from 'react';
+import {
+  CoverScreenOne,
+  CoverScreenOneTitle,
+  CoverScreenOneDescription,
+  CoverScreenOneButton,
+} from '@farfarawaylabs/react-native-beautiful-ui';
+import { View } from 'react-native';
+
+export default function App() {
+  const demoBgImage = require('../demoImages/demoBG.jpg');
+
+  return (
+    <CoverScreenOne image={demoBgImage}>
+      <CoverScreenOneTitle title="Welcome to the amazing app" />
+      <CoverScreenOneDescription description="Create amazing things using this app. You never seen this before" />
+      <CoverScreenOneButton title="Take me in" />
+    </CoverScreenOne>
+  );
+}
+```
+
 ## Contributing
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
