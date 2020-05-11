@@ -4,11 +4,12 @@ import {
   Overlay,
   RoundedButton,
   ButtonEffectType,
+  ProfileHeaderOne,
 } from '@farfarawaylabs/react-native-beautiful-ui';
 import { Center } from '@farfarawaylabs/react-native-layout';
 
 export default function App() {
-  return <ShowRoundedButtons />;
+  return <ShowProfileHeaderOne />;
 }
 
 const ShowOverlay = () => {
@@ -72,5 +73,25 @@ const ShowRoundedButtons = () => {
         onPress={() => {}}
       />
     </View>
+  );
+};
+
+const ShowProfileHeaderOne = () => {
+  const image = require('../demoImages/headerOneBG.jpg');
+  const avatar = require('../demoImages/avatarGirlOne.png');
+  return (
+    <>
+      <View style={{ padding: 50 }}>
+        <Text style={{ color: '#fff' }}>
+          You can add UI on top of the header
+        </Text>
+      </View>
+
+      <ProfileHeaderOne
+        backgroundImage={image}
+        avatar={avatar}
+        name="Johanna Bale"
+      />
+    </>
   );
 };

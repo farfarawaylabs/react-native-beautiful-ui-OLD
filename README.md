@@ -96,6 +96,51 @@ export default function App() {
 }
 ```
 
+## ProfileHeaderOne
+
+This component represent a fully design option for a header of a profile screen
+
+You can customize it using the following props:
+
+- backgroundImage: The image to display as the background of the header
+
+- avatar: The image to display as the avatar of the user
+
+- name: The user name
+
+- nameStyle: Additional styles or a override the default user name style
+
+- avatarStyle: Additional styles of override the default avatar style
+
+<img align="right" width="300" height="600" src="https://github.com/nechmads/demo_images/blob/master/fflabs_react-native-beautiful-ui/ProfileHeaderOne.png?raw=true">
+
+```js
+import React, { useState } from 'react';
+import { Button } from '@farfarawaylabs/react-native-beautiful-ui';
+import { View } from 'react-native';
+
+export default function App() {
+  const image = require('../demoImages/headerOneBG.jpg');
+  const avatar = require('../demoImages/avatarGirlOne.png');
+
+  return (
+    <>
+      <View style={{ padding: 50 }}>
+        <Text style={{ color: '#fff' }}>
+          You can add UI on top of the header
+        </Text>
+      </View>
+
+      <ProfileHeaderOne
+        backgroundImage={image}
+        avatar={avatar}
+        name="Johanna Bale"
+      />
+    </>
+  );
+}
+```
+
 ## Contributing
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.

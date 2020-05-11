@@ -53,13 +53,15 @@
     "prettier": "^2.0.5",
     "react": "~16.9.0",
     "react-native": "~0.61.5",
+    "react-native-elements": "^2.0.0",
     "release-it": "^13.5.8",
     "typescript": "^3.8.3"
   },
   "peerDependencies": {
+    "@react-native-community/blur": "^3.6.0",
     "react": "*",
     "react-native": "*",
-    "@react-native-community/blur": "^3.6.0"
+    "react-native-elements": "^2.0.0"
   },
   "jest": {
     "preset": "react-native",
