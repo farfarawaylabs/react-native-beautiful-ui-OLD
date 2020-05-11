@@ -8,6 +8,8 @@ Beauitful UI for React Native projects
 npm install @farfarawaylabs/react-native-beautiful-ui
 ```
 
+You should also install react-native-elements (https://react-native-elements.github.io/)
+
 ## Overlay
 
 This control allows you to show an overlay above all other UI on the screen. It blurs the contents of the screen and uses simple animation to show the overlay.
@@ -170,6 +172,48 @@ export default function App() {
       <CoverScreenOneDescription description="Create amazing things using this app. You never seen this before" />
       <CoverScreenOneButton title="Take me in" />
     </CoverScreenOne>
+  );
+}
+```
+
+## CoverScreenTwo
+
+This component represent a fully designed cover screen.
+COnfigure it using the following props:
+
+- image: The backgound image of the cover screen
+
+- title: The title of the cover screen
+
+- subtitle: The subtitle of the cover screen
+
+- buttonTitle: The title of the action button of the screen
+
+- onPress: The event handler of the action button of the screen
+
+- allCaps: Should the title of the screen be shown in all caps. Default to true.
+
+- titleStyle: Additional styels for the title of the screen
+
+- subtitleStyle: Additional styles for the subtitle of the screen
+
+<img align="right" width="300" height="600" src="https://github.com/nechmads/demo_images/blob/master/fflabs_react-native-beautiful-ui/CoverScreenTwo.png?raw=true">
+
+```js
+import React, { useState } from 'react';
+import { CoverScreenTwo } from '@farfarawaylabs/react-native-beautiful-ui';
+import { View } from 'react-native';
+
+export default function App() {
+  const demoBgImage = require('../demoImages/demoBG.jpg');
+  return (
+    <CoverScreenTwo
+      image={demoBgImage}
+      title="Welcome to the App"
+      subtitle="The best app"
+      buttonTitle="Show me in"
+      onPress={() => {}}
+    />
   );
 }
 ```

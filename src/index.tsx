@@ -8,6 +8,7 @@ import CoverScreenOne from './screens/CoverScreenOne/CoverScreenOne';
 import CoverScreenOneTitle from './screens/CoverScreenOne/CoverScreenOneTitle';
 import CoverScreenOneDescription from './screens/CoverScreenOne/CoverScreenOneDescription';
 import CoverScreenOneButton from './screens/CoverScreenOne/CoverScreenOneButton';
+import CoverScreenTwo from './screens/CoverScreenTwo/CoverScreenTwo';
 
 export {
   Overlay,
@@ -19,4 +20,5 @@ export {
   CoverScreenOneTitle,
   CoverScreenOneDescription,
   CoverScreenOneButton,
+  CoverScreenTwo,
 };

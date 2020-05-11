@@ -10,11 +10,12 @@ import {
   CoverScreenOneTitle,
   CoverScreenOneDescription,
   CoverScreenOneButton,
+  CoverScreenTwo,
 } from '@farfarawaylabs/react-native-beautiful-ui';
 import { Center } from '@farfarawaylabs/react-native-layout';
 
 export default function App() {
-  return <ShowCoverScreenOne />;
+  return <ShowCoverScreenTwo />;
 }
 
 const ShowOverlay = () => {
@@ -121,5 +122,18 @@ const ShowCoverScreenOne = () => {
       <CoverScreenOneDescription description="Create amazing things using this app. You never seen this before" />
       <CoverScreenOneButton title="Take me in" />
     </CoverScreenOne>
+  );
+};
+
+const ShowCoverScreenTwo = () => {
+  const demoBgImage = require('../demoImages/demoBG.jpg');
+  return (
+    <CoverScreenTwo
+      image={demoBgImage}
+      title="Welcome to the App"
+      subtitle="The best app"
+      buttonTitle="Show me in"
+      onPress={() => {}}
+    />
   );
 };
