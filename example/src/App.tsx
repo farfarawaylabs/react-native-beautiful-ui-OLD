@@ -5,11 +5,12 @@ import {
   RoundedButton,
   ButtonEffectType,
   ProfileHeaderOne,
+  BackgroundImageView,
 } from '@farfarawaylabs/react-native-beautiful-ui';
 import { Center } from '@farfarawaylabs/react-native-layout';
 
 export default function App() {
-  return <ShowProfileHeaderOne />;
+  return <ShowBackgroundImageView />;
 }
 
 const ShowOverlay = () => {
@@ -93,5 +94,17 @@ const ShowProfileHeaderOne = () => {
         name="Johanna Bale"
       />
     </>
+  );
+};
+
+const ShowBackgroundImageView = () => {
+  const demoBgImage = require('../demoImages/demoBG.jpg');
+
+  return (
+    <BackgroundImageView image={demoBgImage}>
+      <Center horizontal vertical>
+        <Text>Just a text</Text>
+      </Center>
+    </BackgroundImageView>
   );
 };

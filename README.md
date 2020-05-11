@@ -96,6 +96,10 @@ export default function App() {
 }
 ```
 
+## BackgroundImageView
+
+This is just a simple wrapper around React Native ImageBackground giving it the required style in order to dispay an image across the all background.
+
 ## ProfileHeaderOne
 
 This component represent a fully design option for a header of a profile screen
