@@ -1,23 +1,6 @@
 import React from 'react';
-import {
-  TouchableWithoutFeedback,
-  StyleSheet,
-  ViewStyle,
-  Text,
-  View,
-  TextStyle,
-  TouchableHighlight,
-  TouchableOpacity,
-  TouchableNativeFeedback,
-  Platform,
-} from 'react-native';
-
-export enum ButtonEffectType {
-  Native = 'native',
-  Opacity = 'opacity',
-  Highlite = 'highlite',
-  None = 'none',
-}
+import { StyleSheet, ViewStyle, Text, View, TextStyle } from 'react-native';
+import ButtonContainer, { ButtonEffectType } from './ButtonContainer';
 
 interface RoundedButtonProps {
   /** The button title */
@@ -72,50 +55,6 @@ const RoundedButton: React.FC<RoundedButtonProps> = ({
       </View>
     </ButtonContainer>
   );
-};
-
-interface ButtonContainerProps {
-  effectType: ButtonEffectType;
-  onPress: () => void;
-}
-const ButtonContainer: React.FC<ButtonContainerProps> = ({
-  children,
-  effectType,
-  onPress,
-}) => {
-  switch (effectType) {
-    case ButtonEffectType.None:
-      return (
-        <TouchableWithoutFeedback onPress={onPress}>
-          {children}
-        </TouchableWithoutFeedback>
-      );
-
-    case ButtonEffectType.Highlite:
-      return (
-        <TouchableHighlight onPress={onPress}>{children}</TouchableHighlight>
-      );
-
-    case ButtonEffectType.Opacity:
-      return <TouchableOpacity onPress={onPress}>{children}</TouchableOpacity>;
-
-    case ButtonEffectType.Native:
-      return (
-        <TouchableHighlight onPress={onPress}>{children}</TouchableHighlight>
-      );
-
-    case ButtonEffectType.Native:
-      console.log(effectType);
-      if (Platform.OS === 'android') {
-        return (
-          <TouchableNativeFeedback onPress={onPress}>
-            {children}
-          </TouchableNativeFeedback>
-        );
-      }
-
-      return <TouchableOpacity onPress={onPress}>{children}</TouchableOpacity>;
-  }
 };
 
 const styles = StyleSheet.create({

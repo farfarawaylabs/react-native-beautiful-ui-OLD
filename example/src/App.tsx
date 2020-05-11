@@ -11,11 +11,13 @@ import {
   CoverScreenOneDescription,
   CoverScreenOneButton,
   CoverScreenTwo,
+  FacebookLoginButton,
+  GoogleLoginButton,
 } from '@farfarawaylabs/react-native-beautiful-ui';
 import { Center } from '@farfarawaylabs/react-native-layout';
 
 export default function App() {
-  return <ShowCoverScreenTwo />;
+  return <ShowSocialLoginButtons />;
 }
 
 const ShowOverlay = () => {
@@ -135,5 +137,17 @@ const ShowCoverScreenTwo = () => {
       buttonTitle="Show me in"
       onPress={() => {}}
     />
+  );
+};
+
+const ShowSocialLoginButtons = () => {
+  return (
+    <>
+      <Center horizontal vertical>
+        <FacebookLoginButton onPress={() => {}} />
+        <GoogleLoginButton onPress={() => {}} />
+      </Center>
+      <Center horizontal vertical />
+    </>
   );
 };

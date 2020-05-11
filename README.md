@@ -218,6 +218,33 @@ export default function App() {
 }
 ```
 
+## Social Buttons
+
+These components are basically pre-styled buttons for login actions using different social platforms. The buttons don't include any actual login functionality at the momemnt.
+
+<img align="right" width="300" height="600" src="https://github.com/nechmads/demo_images/blob/master/fflabs_react-native-beautiful-ui/SocialLogins.png?raw=true">
+
+```js
+import React, { useState } from 'react';
+import {
+  FacebookLoginButton,
+  GoogleLoginButton,
+} from '@farfarawaylabs/react-native-beautiful-ui';
+import { View } from 'react-native';
+
+export default function App() {
+  const demoBgImage = require('../demoImages/demoBG.jpg');
+  return (
+    <>
+      <Center horizontal vertical>
+        <FacebookLoginButton onPress={() => {}} />
+        <GoogleLoginButton onPress={() => {}} />
+      </Center>
+    </>
+  );
+}
+```
+
 ## Contributing
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.

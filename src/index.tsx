@@ -1,7 +1,6 @@
 import Overlay from './components/general/Overlay';
-import RoundedButton, {
-  ButtonEffectType,
-} from './components/general/buttons/RoundedButton';
+import RoundedButton from './components/general/buttons/RoundedButton';
+import { ButtonEffectType } from './components/general/buttons/ButtonContainer';
 import ProfileHeaderOne from './components/profile/ProfileHeaderOne';
 import BackgroundImageView from './components/general/BackgroundImageView';
 import CoverScreenOne from './screens/CoverScreenOne/CoverScreenOne';
@@ -9,6 +8,8 @@ import CoverScreenOneTitle from './screens/CoverScreenOne/CoverScreenOneTitle';
 import CoverScreenOneDescription from './screens/CoverScreenOne/CoverScreenOneDescription';
 import CoverScreenOneButton from './screens/CoverScreenOne/CoverScreenOneButton';
 import CoverScreenTwo from './screens/CoverScreenTwo/CoverScreenTwo';
+import FacebookLoginButton from './components/general/buttons/FacebookLoginButton';
+import GoogleLoginButton from './components/general/buttons/GoogleLoginButton';
 
 export {
   Overlay,
@@ -21,4 +22,6 @@ export {
   CoverScreenOneDescription,
   CoverScreenOneButton,
   CoverScreenTwo,
+  FacebookLoginButton,
+  GoogleLoginButton,
 };
