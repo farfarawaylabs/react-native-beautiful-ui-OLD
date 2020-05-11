@@ -98,6 +98,34 @@ export default function App() {
 }
 ```
 
+## Social Buttons
+
+These components are basically pre-styled buttons for login actions using different social platforms. The buttons don't include any actual login functionality at the momemnt.
+
+<img align="right" width="300" height="600" src="https://github.com/nechmads/demo_images/blob/master/fflabs_react-native-beautiful-ui/SocialLogins.png?raw=true">
+
+```js
+import React, { useState } from 'react';
+import {
+  FacebookLoginButton,
+  GoogleLoginButton,
+} from '@farfarawaylabs/react-native-beautiful-ui';
+
+import { View } from 'react-native';
+
+export default function App() {
+  const demoBgImage = require('../demoImages/demoBG.jpg');
+  return (
+    <>
+      <Center horizontal vertical>
+        <FacebookLoginButton onPress={() => {}} />
+        <GoogleLoginButton onPress={() => {}} />
+      </Center>
+    </>
+  );
+}
+```
+
 ## BackgroundImageView
 
 This is just a simple wrapper around React Native ImageBackground giving it the required style in order to dispay an image across the all background.
@@ -218,29 +246,34 @@ export default function App() {
 }
 ```
 
-## Social Buttons
+## LoginScreenOne
 
-These components are basically pre-styled buttons for login actions using different social platforms. The buttons don't include any actual login functionality at the momemnt.
+This component represent a fully designed login screen. It is built as a composable component so it's easy to configure as needed. Each of the child compoenents can be styled separately or removed all together.
 
-<img align="right" width="300" height="600" src="https://github.com/nechmads/demo_images/blob/master/fflabs_react-native-beautiful-ui/SocialLogins.png?raw=true">
+<img align="right" width="300" height="600" src="https://github.com/nechmads/demo_images/blob/master/fflabs_react-native-beautiful-ui/LoginScreenOne.png?raw=true">
 
 ```js
 import React, { useState } from 'react';
-import {
-  FacebookLoginButton,
-  GoogleLoginButton,
-} from '@farfarawaylabs/react-native-beautiful-ui';
+import { LoginScreenOne } from '@farfarawaylabs/react-native-beautiful-ui';
 import { View } from 'react-native';
 
 export default function App() {
   const demoBgImage = require('../demoImages/demoBG.jpg');
+  const demoLogoImage = require('../demoImages/demoLogo.png');
   return (
-    <>
-      <Center horizontal vertical>
+    <LoginScreenOne.Screen backgroundImage={demoBgImage}>
+      <LoginScreenOne.LogoContainer>
+        <Image source={demoLogoImage} />
+      </LoginScreenOne.LogoContainer>
+      <LoginScreenOne.TitleContainer>
+        <LoginScreenOne.Title title="Welcome to the most amazing app" />
+        <LoginScreenOne.Description description="The number one social app that is doing amazing things" />
+      </LoginScreenOne.TitleContainer>
+      <LoginScreenOne.ButtonsContainer>
         <FacebookLoginButton onPress={() => {}} />
         <GoogleLoginButton onPress={() => {}} />
-      </Center>
-    </>
+      </LoginScreenOne.ButtonsContainer>
+    </LoginScreenOne.Screen>
   );
 }
 ```

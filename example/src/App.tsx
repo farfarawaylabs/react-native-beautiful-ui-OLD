@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Text, View } from 'react-native';
+import { Button, Text, View, Image } from 'react-native';
 import {
   Overlay,
   RoundedButton,
@@ -13,11 +13,12 @@ import {
   CoverScreenTwo,
   FacebookLoginButton,
   GoogleLoginButton,
+  LoginScreenOne,
 } from '@farfarawaylabs/react-native-beautiful-ui';
 import { Center } from '@farfarawaylabs/react-native-layout';
 
 export default function App() {
-  return <ShowSocialLoginButtons />;
+  return <ShowLoginScreenOne />;
 }
 
 const ShowOverlay = () => {
@@ -149,5 +150,25 @@ const ShowSocialLoginButtons = () => {
       </Center>
       <Center horizontal vertical />
     </>
+  );
+};
+
+const ShowLoginScreenOne = () => {
+  const demoBgImage = require('../demoImages/demoBG.jpg');
+  const demoLogoImage = require('../demoImages/demoLogo.png');
+  return (
+    <LoginScreenOne.Screen backgroundImage={demoBgImage}>
+      <LoginScreenOne.LogoContainer>
+        <Image source={demoLogoImage} />
+      </LoginScreenOne.LogoContainer>
+      <LoginScreenOne.TitleContainer>
+        <LoginScreenOne.Title title="Welcome to the most amazing app" />
+        <LoginScreenOne.Description description="The number one social app that is doing amazing things" />
+      </LoginScreenOne.TitleContainer>
+      <LoginScreenOne.ButtonsContainer>
+        <FacebookLoginButton onPress={() => {}} />
+        <GoogleLoginButton onPress={() => {}} />
+      </LoginScreenOne.ButtonsContainer>
+    </LoginScreenOne.Screen>
   );
 };

@@ -30,7 +30,7 @@ const FacebookLoginButton: React.FC<FacebookLoginButtonProps> = ({
         <Icon
           type="font-awesome"
           name="facebook-square"
-          size={20}
+          size={25}
           color="white"
         />
       }
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
   },
   title: {
     marginLeft: 10,
-    fontSize: 15,
+    fontSize: 20,
   },
 });
 

@@ -26,15 +26,20 @@ const GoogleLoginButton: React.FC<GoogleLoginButtonProps> = ({
       onPress={onPress}
       effectType={ButtonEffectType.Opacity}
       image={img}
-      imageStyle={[styles.button, style]}
+      imageStyle={[styles.image]}
+      containerStyle={[styles.container, style]}
     />
   );
 };
 
 const styles = StyleSheet.create({
-  button: {
-    width: 198,
+  container: {
+    width: 196,
     height: 46,
+  },
+  image: {
+    width: '100%',
+    height: '100%',
   },
   title: {},
 });
