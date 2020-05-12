@@ -10,6 +10,8 @@ npm install @farfarawaylabs/react-native-beautiful-ui
 
 You should also install react-native-elements (https://react-native-elements.github.io/)
 
+This package is also using our own Layout package which you can find here: https://github.com/farfarawaylabs/react-native-layout
+
 ## Overlay
 
 This control allows you to show an overlay above all other UI on the screen. It blurs the contents of the screen and uses simple animation to show the overlay.
@@ -24,7 +26,7 @@ You can control all of this with the following props:
 
 - blurType: The type of blur to use
 
-<img align="right" width="300" height="600" src="https://github.com/nechmads/demo_images/blob/master/fflabs_react-native-beautiful-ui/Overlay.png?raw=true">
+<img width="300" height="600" src="https://github.com/nechmads/demo_images/blob/master/fflabs_react-native-beautiful-ui/Overlay.png?raw=true">
 
 ```js
 import React, { useState } from 'react';
@@ -75,7 +77,7 @@ Simple big roudned buttons allowing you to easily customize them. Main props:
 
 - style: Allowing you to add or override the button style
 
-<img align="right" width="300" height="600" src="https://github.com/nechmads/demo_images/blob/master/fflabs_react-native-beautiful-ui/RoundedButton.png?raw=true">
+<img width="300" height="600" src="https://github.com/nechmads/demo_images/blob/master/fflabs_react-native-beautiful-ui/RoundedButton.png?raw=true">
 
 ```js
 import React, { useState } from 'react';
@@ -102,7 +104,7 @@ export default function App() {
 
 These components are basically pre-styled buttons for login actions using different social platforms. The buttons don't include any actual login functionality at the momemnt.
 
-<img align="right" width="300" height="600" src="https://github.com/nechmads/demo_images/blob/master/fflabs_react-native-beautiful-ui/SocialLogins.png?raw=true">
+<img width="300" height="600" src="https://github.com/nechmads/demo_images/blob/master/fflabs_react-native-beautiful-ui/SocialLogins.png?raw=true">
 
 ```js
 import React, { useState } from 'react';
@@ -146,7 +148,7 @@ You can customize it using the following props:
 
 - avatarStyle: Additional styles of override the default avatar style
 
-<img align="right" width="300" height="600" src="https://github.com/nechmads/demo_images/blob/master/fflabs_react-native-beautiful-ui/ProfileHeaderOne.png?raw=true">
+<img width="300" height="600" src="https://github.com/nechmads/demo_images/blob/master/fflabs_react-native-beautiful-ui/ProfileHeaderOne.png?raw=true">
 
 ```js
 import React, { useState } from 'react';
@@ -179,7 +181,7 @@ export default function App() {
 
 This component represent a fully designed cover screen. It is built as a composable component so it's easy to configure as needed. Each of the child compoenents can be styled separately or removed all together.
 
-<img align="right" width="300" height="600" src="https://github.com/nechmads/demo_images/blob/master/fflabs_react-native-beautiful-ui/CoverScreenOne.png?raw=true">
+<img width="300" height="600" src="https://github.com/nechmads/demo_images/blob/master/fflabs_react-native-beautiful-ui/CoverScreenOne.png?raw=true">
 
 ```js
 import React, { useState } from 'react';
@@ -225,7 +227,7 @@ COnfigure it using the following props:
 
 - subtitleStyle: Additional styles for the subtitle of the screen
 
-<img align="right" width="300" height="600" src="https://github.com/nechmads/demo_images/blob/master/fflabs_react-native-beautiful-ui/CoverScreenTwo.png?raw=true">
+<img width="300" height="600" src="https://github.com/nechmads/demo_images/blob/master/fflabs_react-native-beautiful-ui/CoverScreenTwo.png?raw=true">
 
 ```js
 import React, { useState } from 'react';
@@ -250,7 +252,7 @@ export default function App() {
 
 This component represent a fully designed login screen. It is built as a composable component so it's easy to configure as needed. Each of the child compoenents can be styled separately or removed all together.
 
-<img align="right" width="300" height="600" src="https://github.com/nechmads/demo_images/blob/master/fflabs_react-native-beautiful-ui/LoginScreenOne.png?raw=true">
+<img width="300" height="600" src="https://github.com/nechmads/demo_images/blob/master/fflabs_react-native-beautiful-ui/LoginScreenOne.png?raw=true">
 
 ```js
 import React, { useState } from 'react';
