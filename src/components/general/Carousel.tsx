@@ -50,7 +50,7 @@ const Carousel: React.FC<CarouselProps> = ({
   showDots = true,
   ...rest
 }) => {
-  const [selectedIndex, setSelectedIndex] = useState(selectedSlide);
+  const selectedIndex = useRef(selectedSlide);
 
   const moveToSelectedIndex = (
     event: NativeSyntheticEvent<NativeScrollEvent>
@@ -59,7 +59,7 @@ const Carousel: React.FC<CarouselProps> = ({
     const viewSize = event.nativeEvent.layoutMeasurement;
 
     const newIndex = Math.floor(contentOffset.x / viewSize.width);
-    setSelectedIndex(newIndex);
+    selectedIndex.current = newIndex;
   };
 
   let carouselPageWidth: number;
@@ -92,21 +92,36 @@ const Carousel: React.FC<CarouselProps> = ({
       </ScrollView>
 
       {showDots && (
-        <View style={styles.circleDiv}>
-          {React.Children.map(children, (_: any, index: number) => {
-            const dotStyles: Array<any> = [styles.dot];
-            if (index === selectedIndex) {
-              dotStyles.push(styles.selectedDot);
-              dotStyles.push({ backgroundColor: activeDotColor });
-            } else {
-              dotStyles.push({ backgroundColor: dotColor });
-            }
-            return <View style={dotStyles} key={`slide_c${index}`} />;
-          })}
-        </View>
+        <NavigationalDots
+          numberOfDots={React.Children.count(children)}
+          selectedIndex={selectedIndex.current}
+          dotColor={dotColor}
+          activeDotColor={activeDotColor}
+        />
       )}
     </View>
   );
+};
+
+const NavigationalDots: React.FC<{
+  numberOfDots: number;
+  selectedIndex: number;
+  dotColor: string;
+  activeDotColor: string;
+}> = ({ numberOfDots, selectedIndex, dotColor, activeDotColor }) => {
+  const dots = [];
+  for (let index = 0; index < numberOfDots; index++) {
+    const dotStyles: Array<any> = [styles.dot];
+    if (index === selectedIndex) {
+      dotStyles.push(styles.selectedDot);
+      dotStyles.push({ backgroundColor: activeDotColor });
+    } else {
+      dotStyles.push({ backgroundColor: dotColor });
+    }
+
+    dots.push(<View style={dotStyles} key={`slide_c${index}`} />);
+  }
+  return <View style={styles.circleDiv}>{dots}</View>;
 };
 
 const styles = StyleSheet.create({
