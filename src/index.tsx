@@ -12,6 +12,7 @@ import FacebookLoginButton from './components/general/buttons/FacebookLoginButto
 import GoogleLoginButton from './components/general/buttons/GoogleLoginButton';
 import LoginScreenOne from './screens/LoginScreenOne/LoginScreenOne';
 import AnimatedListItem from './components/general/listItems/AnimatedListItem';
+import Carousel from './components/general/Carousel';
 
 export {
   Overlay,
@@ -28,4 +29,5 @@ export {
   GoogleLoginButton,
   LoginScreenOne,
   AnimatedListItem,
+  Carousel,
 };

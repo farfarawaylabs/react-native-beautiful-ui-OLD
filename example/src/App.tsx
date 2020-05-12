@@ -22,11 +22,12 @@ import {
   GoogleLoginButton,
   LoginScreenOne,
   AnimatedListItem,
+  Carousel,
 } from '@farfarawaylabs/react-native-beautiful-ui';
 import { Center } from '@farfarawaylabs/react-native-layout';
 
 export default function App() {
-  return <ShowAnimatedListItem />;
+  return <ShowCarousel />;
 }
 
 const ShowOverlay = () => {
@@ -219,6 +220,19 @@ const ShowAnimatedListItem = () => {
         )}
         keyExtractor={(item) => item}
       />
+    </Center>
+  );
+};
+
+const ShowCarousel = () => {
+  const demoBgImage = require('../demoImages/demoBG.jpg');
+  return (
+    <Center horizontal vertical>
+      <Carousel width={400} height={400} autoAdvanceDuration={2}>
+        <Image source={demoBgImage} />
+        <Image source={demoBgImage} />
+        <Image source={demoBgImage} />
+      </Carousel>
     </Center>
   );
 };

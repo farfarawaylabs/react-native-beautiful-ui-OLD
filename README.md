@@ -230,6 +230,35 @@ export default function App() {
 }
 ```
 
+## Carousel
+
+Use this component to show simple Carousel. Set the width and height to display full screen slideshows or in page carousel style display. The Carousel can take any views (including Image) as children.
+
+- Width: The width of the carousel. This will also set the width for each of the child views
+
+- Hegiht: The height of the carousel. This will also set the height for each of the child views
+
+<img width="300" height="600" src="https://github.com/nechmads/demo_images/blob/master/fflabs_react-native-beautiful-ui/Carousel.png?raw=true">
+
+```js
+import React, { useState } from 'react';
+import { Carousel } from '@farfarawaylabs/react-native-beautiful-ui';
+import { Image } from 'react-native';
+
+export default function App() {
+  const demoBgImage = require('../demoImages/demoBG.jpg');
+  return (
+    <Center horizontal vertical>
+      <Carousel width={400} height={400} autoAdvanceDuration={2}>
+        <Image source={demoBgImage} />
+        <Image source={demoBgImage} />
+        <Image source={demoBgImage} />
+      </Carousel>
+    </Center>
+  );
+}
+```
+
 ## CoverScreenOne
 
 This component represent a fully designed cover screen. It is built as a composable component so it's easy to configure as needed. Each of the child compoenents can be styled separately or removed all together.
