@@ -234,9 +234,11 @@ export default function App() {
 
 Use this component to show simple Carousel. Set the width and height to display full screen slideshows or in page carousel style display. The Carousel can take any views (including Image) as children.
 
-- Width: The width of the carousel. This will also set the width for each of the child views
+- width: The width of the carousel. This will also set the width for each of the child views
 
-- Hegiht: The height of the carousel. This will also set the height for each of the child views
+- hegiht: The height of the carousel. This will also set the height for each of the child views
+
+- selectedSlide: The index of the slide to show in the Carousel (zero based). Defaults to 0
 
 <img width="300" height="600" src="https://github.com/nechmads/demo_images/blob/master/fflabs_react-native-beautiful-ui/Carousel.png?raw=true">
 

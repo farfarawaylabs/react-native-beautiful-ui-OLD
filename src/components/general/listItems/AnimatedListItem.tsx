@@ -67,7 +67,9 @@ const AnimatedListItem: React.FC<AnimatedListItemProps> = ({
   ...rest
 }) => {
   const { rowStyles, onRemove } = useListItemAnimation(70, () => {
-    console.log(onRemoveAnimationEnded);
+    if (onRemoveAnimationEnded) {
+      onRemoveAnimationEnded();
+    }
   });
 
   useEffect(() => {

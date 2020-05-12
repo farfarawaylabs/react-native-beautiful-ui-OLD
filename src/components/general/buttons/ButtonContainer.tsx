@@ -58,7 +58,6 @@ const ButtonContainer: React.FC<ButtonContainerProps> = ({
       );
 
     case ButtonEffectType.Native:
-      console.log(effectType);
       if (Platform.OS === 'android') {
         return (
           <TouchableNativeFeedback onPress={onPress} {...rest}>

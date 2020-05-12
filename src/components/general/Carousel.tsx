@@ -18,6 +18,18 @@ interface CarouselProps {
   /** The height of the carousel. This will also set the width for each of the child views */
   height?: number | string;
 
+  /** The index of the slide to show in the Carousel (zero based). Defaults to 0 */
+  selectedSlide?: number;
+
+  /** Should the carousel display navigational dots on the bottom. Defautls to true */
+  showDots?: boolean;
+
+  /** The color of a dot represnting a slide. Defaults to '#FFF */
+  dotColor?: string;
+
+  /** The color of the active dot. Defaults to '#232323' */
+  activeDotColor?: string;
+
   /**
    * Additional styles or styles to override default style
    */
@@ -32,10 +44,13 @@ const Carousel: React.FC<CarouselProps> = ({
   children,
   width = WINDOW_WIDTH,
   height = '100%',
+  selectedSlide = 0,
+  dotColor = '#FFF',
+  activeDotColor = '#232323',
+  showDots = true,
   ...rest
 }) => {
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const scrollRef = useRef(null);
+  const [selectedIndex, setSelectedIndex] = useState(selectedSlide);
 
   const moveToSelectedIndex = (
     event: NativeSyntheticEvent<NativeScrollEvent>
@@ -47,30 +62,49 @@ const Carousel: React.FC<CarouselProps> = ({
     setSelectedIndex(newIndex);
   };
 
+  let carouselPageWidth: number;
+  if (typeof width === 'string') {
+    let widthPct = parseInt(width.replace('%', ''), 10);
+
+    carouselPageWidth = (widthPct / 100) * WINDOW_WIDTH;
+  } else {
+    carouselPageWidth = width;
+  }
+
   return (
-    <View style={[{ width: width, height: height }, style]} {...rest}>
+    <View
+      style={[{ width: carouselPageWidth, height: height }, style]}
+      {...rest}
+    >
       <ScrollView
         horizontal
         pagingEnabled
         onMomentumScrollEnd={moveToSelectedIndex}
-        ref={scrollRef}
       >
         {React.Children.map(children, (currChild: any) => {
           return React.cloneElement(currChild, {
-            style: { width: width, height: height },
+            style: [
+              { width: carouselPageWidth, height: height },
+              currChild.props.style,
+            ],
           });
         })}
       </ScrollView>
 
-      <View style={styles.circleDiv}>
-        {React.Children.map(children, (_: any, index: number) => {
-          const dotStyles: Array<any> = [styles.dot];
-          if (index === selectedIndex) {
-            dotStyles.push(styles.selectedDot);
-          }
-          return <View style={dotStyles} key={`slide_c${index}`} />;
-        })}
-      </View>
+      {showDots && (
+        <View style={styles.circleDiv}>
+          {React.Children.map(children, (_: any, index: number) => {
+            const dotStyles: Array<any> = [styles.dot];
+            if (index === selectedIndex) {
+              dotStyles.push(styles.selectedDot);
+              dotStyles.push({ backgroundColor: activeDotColor });
+            } else {
+              dotStyles.push({ backgroundColor: dotColor });
+            }
+            return <View style={dotStyles} key={`slide_c${index}`} />;
+          })}
+        </View>
+      )}
     </View>
   );
 };
@@ -95,10 +129,8 @@ const styles = StyleSheet.create({
     height: 6,
     borderRadius: 3,
     margin: 5,
-    backgroundColor: '#fff',
   },
   selectedDot: {
-    backgroundColor: '#232323',
     height: 8,
     width: 8,
   },

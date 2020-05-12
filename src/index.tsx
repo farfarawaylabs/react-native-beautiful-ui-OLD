@@ -13,6 +13,8 @@ import GoogleLoginButton from './components/general/buttons/GoogleLoginButton';
 import LoginScreenOne from './screens/LoginScreenOne/LoginScreenOne';
 import AnimatedListItem from './components/general/listItems/AnimatedListItem';
 import Carousel from './components/general/Carousel';
+import IntroScreen from './screens/IntroScreen/IntroScreen';
+import IntroScreenRegularSlide from './screens/IntroScreen/IntroScreenRegularSlide';
 
 export {
   Overlay,
@@ -30,4 +32,6 @@ export {
   LoginScreenOne,
   AnimatedListItem,
   Carousel,
+  IntroScreen,
+  IntroScreenRegularSlide,
 };

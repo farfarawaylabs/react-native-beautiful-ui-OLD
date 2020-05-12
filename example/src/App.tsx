@@ -23,11 +23,18 @@ import {
   LoginScreenOne,
   AnimatedListItem,
   Carousel,
+  IntroScreen,
+  IntroScreenRegularSlide,
 } from '@farfarawaylabs/react-native-beautiful-ui';
-import { Center } from '@farfarawaylabs/react-native-layout';
+import {
+  Center,
+  Col,
+  Row,
+  Alignment,
+} from '@farfarawaylabs/react-native-layout';
 
 export default function App() {
-  return <ShowCarousel />;
+  return <ShowIntroScreen />;
 }
 
 const ShowOverlay = () => {
@@ -192,7 +199,6 @@ const ShowAnimatedListItem = () => {
         title="Add Item"
         onPress={() => {
           setItems([...items, 'new item']);
-          console.log(items);
         }}
       />
       <FlatList
@@ -228,11 +234,47 @@ const ShowCarousel = () => {
   const demoBgImage = require('../demoImages/demoBG.jpg');
   return (
     <Center horizontal vertical>
-      <Carousel width={400} height={400} autoAdvanceDuration={2}>
+      <Carousel width={400} height={400}>
         <Image source={demoBgImage} />
         <Image source={demoBgImage} />
         <Image source={demoBgImage} />
       </Carousel>
     </Center>
+  );
+};
+
+const ShowIntroScreen = () => {
+  const demoBgImage = require('../demoImages/introDemoOne.png');
+
+  return (
+    <IntroScreen.Screen dotColor="#ffb367" activeDotColor="#58b4ae">
+      <IntroScreen.Slide>
+        <IntroScreen.ImageSection>
+          <Image
+            source={demoBgImage}
+            style={{ width: '80%', height: '100%' }}
+          />
+        </IntroScreen.ImageSection>
+        <IntroScreen.TitleSection>
+          <IntroScreen.Title title="Welcome to the amazing app" />
+          <IntroScreen.Subtitle subtitle="You won't believe how cool this app and how much you will love it" />
+        </IntroScreen.TitleSection>
+        <IntroScreen.AdditionalContentSection>
+          <Center horizontal vertical style={{ width: '100%' }}>
+            <Button title="Enable Notifications" onPress={() => {}} />
+          </Center>
+        </IntroScreen.AdditionalContentSection>
+      </IntroScreen.Slide>
+      <IntroScreenRegularSlide
+        image={demoBgImage}
+        backgroundColor="#ffe2bc"
+        title="Welcome to the amazing app"
+        subtitle="You won't believe how cool this app and how much you will love it"
+      >
+        <Center horizontal vertical style={{ width: '100%' }}>
+          <Button title="Enable Location" onPress={() => {}} />
+        </Center>
+      </IntroScreenRegularSlide>
+    </IntroScreen.Screen>
   );
 };
