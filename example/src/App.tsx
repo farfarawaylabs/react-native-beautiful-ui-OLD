@@ -1,5 +1,12 @@
-import React, { useState } from 'react';
-import { Button, Text, View, Image } from 'react-native';
+import React, { useState, createRef } from 'react';
+import {
+  Button,
+  Text,
+  View,
+  Image,
+  FlatList,
+  TouchableOpacity,
+} from 'react-native';
 import {
   Overlay,
   RoundedButton,
@@ -14,11 +21,12 @@ import {
   FacebookLoginButton,
   GoogleLoginButton,
   LoginScreenOne,
+  AnimatedListItem,
 } from '@farfarawaylabs/react-native-beautiful-ui';
 import { Center } from '@farfarawaylabs/react-native-layout';
 
 export default function App() {
-  return <ShowLoginScreenOne />;
+  return <ShowAnimatedListItem />;
 }
 
 const ShowOverlay = () => {
@@ -170,5 +178,47 @@ const ShowLoginScreenOne = () => {
         <GoogleLoginButton onPress={() => {}} />
       </LoginScreenOne.ButtonsContainer>
     </LoginScreenOne.Screen>
+  );
+};
+
+const ShowAnimatedListItem = () => {
+  const [indexToRemove, setIndexToRemove] = useState(-1);
+  const [items, setItems] = useState(['joe', 'moe', 'merry', 'buck']);
+
+  return (
+    <Center horizontal style={{ marginTop: 100 }}>
+      <Button
+        title="Add Item"
+        onPress={() => {
+          setItems([...items, 'new item']);
+          console.log(items);
+        }}
+      />
+      <FlatList
+        data={items}
+        renderItem={({ item, index }) => (
+          <AnimatedListItem
+            isRemoved={index === indexToRemove}
+            onRemoveAnimationEnded={() => {
+              const newItems = items.splice(index, 1);
+              setItems(newItems);
+            }}
+          >
+            <TouchableOpacity
+              style={{
+                height: 50,
+                width: 200,
+                marginBottom: 20,
+                borderWidth: 1,
+              }}
+              onPress={() => setIndexToRemove(index)}
+            >
+              <Text>{item}</Text>
+            </TouchableOpacity>
+          </AnimatedListItem>
+        )}
+        keyExtractor={(item) => item}
+      />
+    </Center>
   );
 };

@@ -177,6 +177,59 @@ export default function App() {
 }
 ```
 
+## AnimatedListItem
+
+In many apps you will find yourself adding and removing items from a FlatList component. Use AnimatedListItem to wrap your own items and provide your list with nice add and remove animations for each item.
+When you remove an item, the rest of the items in the list will arrange themselves using animation instead of just "jumping" up.
+
+Run the following code example to see the animations in action:
+
+```js
+import React, { useState } from 'react';
+import { AnimatedListItem } from '@farfarawaylabs/react-native-beautiful-ui';
+import { View, Button, FlatList } from 'react-native';
+
+export default function App() {
+  const [indexToRemove, setIndexToRemove] = useState(-1);
+  const [items, setItems] = useState(['joe', 'moe', 'merry', 'buck']);
+
+  return (
+      <Button
+        title="Add Item"
+        onPress={() => {
+          setItems([...items, 'new item']);
+          console.log(items);
+        }}
+      />
+      <FlatList
+        data={items}
+        renderItem={({ item, index }) => (
+          <AnimatedListItem
+            isRemoved={index === indexToRemove}
+            onRemoveAnimationEnded={() => {
+              const newItems = items.splice(index, 1);
+              setItems(newItems);
+            }}
+          >
+            <TouchableOpacity
+              style={{
+                height: 50,
+                width: 200,
+                marginBottom: 20,
+                borderWidth: 1,
+              }}
+              onPress={() => setIndexToRemove(index)}
+            >
+              <Text>{item}</Text>
+            </TouchableOpacity>
+          </AnimatedListItem>
+        )}
+        keyExtractor={(item) => item}
+      />
+  );
+}
+```
+
 ## CoverScreenOne
 
 This component represent a fully designed cover screen. It is built as a composable component so it's easy to configure as needed. Each of the child compoenents can be styled separately or removed all together.

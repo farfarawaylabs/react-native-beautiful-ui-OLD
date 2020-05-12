@@ -11,6 +11,7 @@ import CoverScreenTwo from './screens/CoverScreenTwo/CoverScreenTwo';
 import FacebookLoginButton from './components/general/buttons/FacebookLoginButton';
 import GoogleLoginButton from './components/general/buttons/GoogleLoginButton';
 import LoginScreenOne from './screens/LoginScreenOne/LoginScreenOne';
+import AnimatedListItem from './components/general/listItems/AnimatedListItem';
 
 export {
   Overlay,
@@ -26,4 +27,5 @@ export {
   FacebookLoginButton,
   GoogleLoginButton,
   LoginScreenOne,
+  AnimatedListItem,
 };
