@@ -6,10 +6,9 @@ import {
   StyleProp,
   TextStyle,
   Text,
-  TouchableOpacity,
 } from 'react-native';
 import BackgroundImageView from '../../components/general/BackgroundImageView';
-import { Col, Alignment, Center } from '@farfarawaylabs/react-native-layout';
+import { Center } from '@farfarawaylabs/react-native-layout';
 import { Button } from 'react-native-elements';
 
 interface CoverScreenTwoProps {

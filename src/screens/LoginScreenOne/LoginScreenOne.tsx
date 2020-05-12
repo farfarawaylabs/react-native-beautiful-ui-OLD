@@ -1,7 +1,9 @@
 import React from 'react';
 import { StyleSheet, ViewStyle, ImageSourcePropType } from 'react-native';
-import { Col, Row, Alignment } from '@farfarawaylabs/react-native-layout';
+import { Col, Alignment } from '@farfarawaylabs/react-native-layout';
 import BackgroundImageView from '../../components/general/BackgroundImageView';
+import LoginScreenOneTitle from './LoginScreenOneTitle';
+import LoginScreenOneDescription from './LoginScreenOneDescription';
 
 const LoginScreenOneLogoContainer: React.FC = ({ children, ...rest }) => {
   return (
@@ -42,11 +44,6 @@ const LoginScreenOneButtonsContainer: React.FC = ({ children, ...rest }) => {
     </Col>
   );
 };
-export {
-  LoginScreenOneTitleContainer,
-  LoginScreenOneButtonsContainer,
-  LoginScreenOneLogoContainer,
-};
 
 interface LoginScreenOneProps {
   /** The image to use as the background of the cover screen */
@@ -60,7 +57,7 @@ interface LoginScreenOneProps {
 /**
  * description
  */
-const LoginScreenOne: React.FC<LoginScreenOneProps> = ({
+const LoginScreen: React.FC<LoginScreenOneProps> = ({
   backgroundImage,
   style,
   children,
@@ -83,5 +80,14 @@ const styles = StyleSheet.create({
     paddingBottom: 46,
   },
 });
+
+const LoginScreenOne = {
+  Screen: LoginScreen,
+  TitleContainer: LoginScreenOneTitleContainer,
+  Title: LoginScreenOneTitle,
+  Description: LoginScreenOneDescription,
+  ButtonsContainer: LoginScreenOneButtonsContainer,
+  LogoContainer: LoginScreenOneLogoContainer,
+};
 
 export default LoginScreenOne;

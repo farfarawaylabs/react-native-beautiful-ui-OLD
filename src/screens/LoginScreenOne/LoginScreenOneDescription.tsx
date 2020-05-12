@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, StyleSheet, ViewStyle } from 'react-native';
 
-interface LoginScreenOneDescriptionProps {
+export interface LoginScreenOneDescriptionProps {
   /** The description text of the cover screen */
   description: string;
 

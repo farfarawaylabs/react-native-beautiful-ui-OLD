@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   ImageBackground,
-  View,
   StyleSheet,
   ViewStyle,
   ImageSourcePropType,
