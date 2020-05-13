@@ -134,6 +134,7 @@
   "dependencies": {
     "@farfarawaylabs/react-native-hooks": "^0.1.0",
     "@farfarawaylabs/react-native-layout": "^1.0.1",
-    "@react-native-community/blur": "^3.6.0"
+    "@react-native-community/blur": "^3.6.0",
+    "react-native-safe-area-context": "^1.0.0"
   }
 }

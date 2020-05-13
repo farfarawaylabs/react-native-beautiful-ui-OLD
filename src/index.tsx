@@ -16,6 +16,7 @@ import Carousel from './components/general/Carousel/Carousel';
 import IntroScreen from './screens/IntroScreen/IntroScreen';
 import IntroScreenRegularSlide from './screens/IntroScreen/IntroScreenRegularSlide';
 import CarouselContext from './components/general/Carousel/CarouselContext';
+import Screen from './components/general/Screen';
 
 export {
   Overlay,
@@ -36,4 +37,5 @@ export {
   IntroScreen,
   IntroScreenRegularSlide,
   CarouselContext,
+  Screen,
 };

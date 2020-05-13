@@ -132,6 +132,24 @@ export default function App() {
 
 This is just a simple wrapper around React Native ImageBackground giving it the required style in order to dispay an image across the all background.
 
+## Screen
+
+The Screen component encapsulate some common functionality that most screens needs like supporting for an image as a background, using safe areas and reporting onFocus (can be used to report a screen viwe for analytics services)
+
+Props:
+
+- name: An easy to understand name that can be used later when reporting events to analytics services
+
+- shouldUseSafeArea: Should the screen use safe area to avoid UI over notches
+
+- backgroundImage: Image to be used as a background for the screen
+
+- backgroundColor: Color to be used as a background of the screen
+
+- onFocus: Event handler to be called when screen gets into focus. Can be used to report a screen view event to analytics services. Works just if you are using React Navigation library.
+
+- style: Any additional style you want to use to add to or override the default style
+
 ## ProfileHeaderOne
 
 This component represent a fully design option for a header of a profile screen
