@@ -29,6 +29,9 @@ const CarouselBody: React.FC<CarouselBodyProps> = memo(
 
       const newIndex = Math.floor(contentOffset.x / viewSize.width);
 
+      if (onSelectedSlideChanged) {
+        onSelectedSlideChanged(newIndex);
+      }
       setSelectedIndex!(newIndex);
     };
 

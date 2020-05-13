@@ -235,7 +235,9 @@ const ShowCarousel = () => {
   return (
     <Center horizontal vertical>
       <Carousel.Container width={400} height={400}>
-        <Carousel.Slides>
+        <Carousel.Slides
+          onSelectedSlideChanged={(selectedSlide) => console.log(selectedSlide)}
+        >
           <Image source={demoBgImage} />
           <Image source={demoBgImage} />
           <Image source={demoBgImage} />
@@ -268,6 +270,7 @@ const ShowIntroScreen = () => {
           </Center>
         </IntroScreen.AdditionalContentSection>
       </IntroScreen.Slide>
+
       <IntroScreenRegularSlide
         image={demoBgImage}
         backgroundColor="#ffe2bc"

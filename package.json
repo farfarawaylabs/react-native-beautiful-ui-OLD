@@ -1,6 +1,6 @@
 {
   "name": "@farfarawaylabs/react-native-beautiful-ui",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Beauitful UI for React Native projects",
   "main": "lib/commonjs/index.js",
   "module": "lib/module/index.js",

@@ -232,13 +232,34 @@ export default function App() {
 
 ## Carousel
 
-Use this component to show simple Carousel. Set the width and height to display full screen slideshows or in page carousel style display. The Carousel can take any views (including Image) as children.
+Use this component to show simple Carousel. Set the width and height to display full screen slideshows or in page carousel style display. The Carousel can take any views (including Image) as slides.
+The Carousel is built using compound component pattern so for example if you don't want to display the navigation dots on the bottom, you can simply emit them or replace them with your own implementation.
+
+### Props of Carousel.Container
 
 - width: The width of the carousel. This will also set the width for each of the child views
 
 - hegiht: The height of the carousel. This will also set the height for each of the child views
 
 - selectedSlide: The index of the slide to show in the Carousel (zero based). Defaults to 0
+
+### Props of Carousel.Slides
+
+- onSelectedSlideChanged: event handler to be called when the selected slide changes
+
+### Props of Caousel.Navigation
+
+- dotColor: The color of a dot represnting a slide. Defaults to '#FFF'
+
+- activeDotColor: The color of the active dot. Defaults to '#232323'
+
+- onDone: Event handler to call when the done button is pressed
+
+- doneButtonTitle: The title of the done button. Defaults to 'Done'
+
+- shouldShowDoneButtonOnAllSlides: Should the done button be showed on all slides or just on the last one. Defaults to false
+
+- doneButton: Provide your own custom done button component
 
 <img width="300" height="600" src="https://github.com/nechmads/demo_images/blob/master/fflabs_react-native-beautiful-ui/Carousel.png?raw=true">
 
@@ -251,11 +272,14 @@ export default function App() {
   const demoBgImage = require('../demoImages/demoBG.jpg');
   return (
     <Center horizontal vertical>
-      <Carousel width={400} height={400} autoAdvanceDuration={2}>
-        <Image source={demoBgImage} />
-        <Image source={demoBgImage} />
-        <Image source={demoBgImage} />
-      </Carousel>
+      <Carousel.Container width={400} height={400}>
+        <Carousel.Slides>
+          <Image source={demoBgImage} />
+          <Image source={demoBgImage} />
+          <Image source={demoBgImage} />
+        </Carousel.Slides>
+        <Carousel.Navigation />
+      </Carousel.Container>
     </Center>
   );
 }
@@ -360,6 +384,95 @@ export default function App() {
         <GoogleLoginButton onPress={() => {}} />
       </LoginScreenOne.ButtonsContainer>
     </LoginScreenOne.Screen>
+  );
+}
+```
+
+## IntroScreen
+
+The goal of this component is to provide a fully working and well designed walkthrough/intro screen which many apps out there are using. The component was written as a compound component so it's very easy to customize or replace certain elements if needed.
+This component is built on top of our Carousel component so each screen is basically a carousel slide.
+We also provide a few wrapper components each one is a fully designed slide in case you just want something quick and don't require a lot of customization. See code below for example of both usages.
+
+### IntroScreen.Screen Props:
+
+- showDots: Should the screen display navigational dots on the bottom. Defautls to true
+
+- dotColor: The color of a dot represnting a slide. Defaults to '#FFF'
+
+- activeDotColor: The color of the active dot. Defaults to '#232323'
+
+- style: Additional styles or styles to override default style
+
+### IntroScreen.Slide Props:
+
+- shouldUseSafeAreaView: Determine if the slide should be displayed inside a SafeAreaView. If true, remember to set the slide background color as well. Defaults to false.
+
+- backgroundColor: The background color of the slide
+
+- style: Additional styles or styles to override default style
+
+### IntroScreen.ImageSection, IntroScreen.TitleSection, IntroScreen.AdditionalContentSection Props:
+
+- backgroundColor: The background color of the section
+
+- style: Additional styles or styles to override default style
+
+### IntroScreen.Title Props:
+
+- title: The title
+
+- style: Additional styles or styles to override default style
+
+### IntroScreen.Subitle Props:
+
+- title: The subtitle
+
+- style: Additional styles or styles to override default style
+
+<img width="300" height="600" src="https://github.com/nechmads/demo_images/blob/master/fflabs_react-native-beautiful-ui/IntroScreenTwo.png?raw=true">
+<img width="300" height="600" src="https://github.com/nechmads/demo_images/blob/master/fflabs_react-native-beautiful-ui/IntroScreenOne.png?raw=true">
+
+```js
+import React, { useState } from 'react';
+import { IntroScreen } from '@farfarawaylabs/react-native-beautiful-ui';
+import { View, Button, Image } from 'react-native';
+import { Center } from '@farfarawaylabs/react-native-layout';
+
+export default function App() {
+  const demoBgImage = require('../demoImages/introDemoOne.png');
+
+  return (
+    <IntroScreen.Screen dotColor="#ffb367" activeDotColor="#58b4ae">
+      <IntroScreen.Slide>
+        <IntroScreen.ImageSection>
+          <Image
+            source={demoBgImage}
+            style={{ width: '80%', height: '100%' }}
+          />
+        </IntroScreen.ImageSection>
+        <IntroScreen.TitleSection>
+          <IntroScreen.Title title="Welcome to the amazing app" />
+          <IntroScreen.Subtitle subtitle="You won't believe how cool this app and how much you will love it" />
+        </IntroScreen.TitleSection>
+        <IntroScreen.AdditionalContentSection>
+          <Center horizontal vertical style={{ width: '100%' }}>
+            <Button title="Enable Notifications" onPress={() => {}} />
+          </Center>
+        </IntroScreen.AdditionalContentSection>
+      </IntroScreen.Slide>
+
+      <IntroScreenRegularSlide
+        image={demoBgImage}
+        backgroundColor="#ffe2bc"
+        title="Welcome to the amazing app"
+        subtitle="You won't believe how cool this app and how much you will love it"
+      >
+        <Center horizontal vertical style={{ width: '100%' }}>
+          <Button title="Enable Location" onPress={() => {}} />
+        </Center>
+      </IntroScreenRegularSlide>
+    </IntroScreen.Screen>
   );
 }
 ```

@@ -15,7 +15,7 @@ interface IntroScreenProps {
   /** Should the screen display navigational dots on the bottom. Defautls to true */
   showDots?: boolean;
 
-  /** The color of a dot represnting a slide. Defaults to '#FFF */
+  /** The color of a dot represnting a slide. Defaults to '#FFF' */
   dotColor?: string;
 
   /** The color of the active dot. Defaults to '#232323' */
@@ -35,15 +35,18 @@ const Screen: React.FC<IntroScreenProps> = ({
   children,
   dotColor = '#FFF',
   activeDotColor = '#232323',
+  showDots = true,
   ...rest
 }) => {
   return (
     <Carousel.Container>
       <Carousel.Slides>{children}</Carousel.Slides>
-      <Carousel.Navigation
-        dotColor={dotColor}
-        activeDotColor={activeDotColor}
-      />
+      {showDots && (
+        <Carousel.Navigation
+          dotColor={dotColor}
+          activeDotColor={activeDotColor}
+        />
+      )}
     </Carousel.Container>
   );
 };

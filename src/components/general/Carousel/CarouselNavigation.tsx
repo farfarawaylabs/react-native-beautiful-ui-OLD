@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, ReactElement } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Button } from 'react-native-elements';
 import { Col, Row, Alignment } from '@farfarawaylabs/react-native-layout';
 import CarouselContext from './CarouselContext';
 
-const CarouselNavigation: React.FC<{
-  /** The color of a dot represnting a slide. Defaults to '#FFF */
+interface CarouselNavigationProps {
+  /** The color of a dot represnting a slide. Defaults to '#FFF' */
   dotColor?: string;
 
   /** The color of the active dot. Defaults to '#232323' */
@@ -19,12 +19,18 @@ const CarouselNavigation: React.FC<{
 
   /** Should the done button be showed on all slides or just on the last one. Defaults to false */
   shouldShowDoneButtonOnAllSlides?: boolean;
-}> = ({
+
+  /** Your own custom element to be used as the done button */
+  doneButton?: ReactElement;
+}
+
+const CarouselNavigation: React.FC<CarouselNavigationProps> = ({
   dotColor = '#FFF',
   activeDotColor = '#232323',
   onDone,
   shouldShowDoneButtonOnAllSlides = false,
   doneButtonTitle = 'Done',
+  doneButton,
 }) => {
   const { numberOfSlides, selectedIndex } = useContext(CarouselContext);
 
@@ -41,6 +47,24 @@ const CarouselNavigation: React.FC<{
     dots.push(<View style={dotStyles} key={`slide_c${index}`} />);
   }
 
+  const getDoneButton = () => {
+    if (doneButton) {
+      return doneButton;
+    }
+
+    return (
+      <Button
+        title={doneButtonTitle}
+        type="clear"
+        titleStyle={styles.actionButton}
+        onPress={() => {
+          if (onDone) {
+            onDone(selectedIndex!);
+          }
+        }}
+      />
+    );
+  };
   return (
     <Row style={styles.navigationalContainer}>
       <Col />
@@ -55,18 +79,8 @@ const CarouselNavigation: React.FC<{
       </Col>
       <Col verticalAlign={Alignment.Center} horizontalAlign={Alignment.Center}>
         {(shouldShowDoneButtonOnAllSlides ||
-          selectedIndex === numberOfSlides! - 1) && (
-          <Button
-            title={doneButtonTitle}
-            type="clear"
-            titleStyle={styles.actionButton}
-            onPress={() => {
-              if (onDone) {
-                onDone(selectedIndex!);
-              }
-            }}
-          />
-        )}
+          selectedIndex === numberOfSlides! - 1) &&
+          getDoneButton()}
       </Col>
     </Row>
   );
