@@ -19,6 +19,7 @@ This package is also using our own Layout package which you can find here: https
 - [Overlay](#overlay)
 - [Rounded Button](#rounded-button)
 - [Social Buttons](#social-buttons)
+- [Spinner](#spinner)
 - [BackgroundImageView](#backgroundimageview)
 - [Screen](#screen)
 - [AnimatedListItem](#animatedlistitem)
@@ -30,6 +31,7 @@ This package is also using our own Layout package which you can find here: https
 - [CoverScreenTwo](#coverscreentwo)
 - [LoginScreenOne](#loginscreenone)
 - [IntroScreen](#introscreen)
+- [AskPermissionScreen](#askpermissionscreen)
 
 ## Overlay
 
@@ -143,6 +145,33 @@ export default function App() {
         <GoogleLoginButton onPress={() => {}} />
       </Center>
     </>
+  );
+}
+```
+
+## Spinner
+
+Very simple component to display a simple spinner in the middle of the screen and on top of any other UI
+
+Props:
+
+- isVisible: Show or hide the spinner. Defaults to true
+
+- color: The color of the spinner
+
+- size: The size of the spinner. Defaults to 'small'
+
+<img width="300" height="600" src="https://github.com/nechmads/demo_images/blob/master/fflabs_react-native-beautiful-ui/Spinner.png?raw=true">
+
+```js
+import React from 'react';
+import { Screen, Spinner } from '@farfarawaylabs/react-native-beautiful-ui';
+
+export default function App() {
+  return (
+    <Screen name="demo_screen">
+      <Spinner size="large" color="pink" />
+    </Screen>
   );
 }
 ```

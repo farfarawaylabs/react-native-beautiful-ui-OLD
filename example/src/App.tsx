@@ -296,7 +296,7 @@ const ShowIntroScreen = () => {
 const ShowScreenWithSpinner = () => {
   return (
     <Screen name="demo_screen">
-      <Spinner size="large" color="pink" isVisible={false} />
+      <Spinner size="large" color="pink" />
     </Screen>
   );
 };
