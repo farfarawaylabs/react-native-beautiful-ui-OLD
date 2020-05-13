@@ -4,7 +4,7 @@ import { Button } from 'react-native-elements';
 import { Col, Row, Alignment } from '@farfarawaylabs/react-native-layout';
 import CarouselContext from './CarouselContext';
 
-interface CarouselNavigationProps {
+export interface CarouselNavigationProps {
   /** The color of a dot represnting a slide. Defaults to '#FFF' */
   dotColor?: string;
 

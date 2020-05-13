@@ -5,7 +5,7 @@ import CarouselNavigation from './CarouselNavigation';
 import CarouselContext from './CarouselContext';
 const WINDOW_WIDTH = Dimensions.get('window').width;
 
-interface CarouselProps {
+export interface CarouselProps {
   /** The width of the carousel. This will also set the width for each of the child views */
   width?: number | string;
 

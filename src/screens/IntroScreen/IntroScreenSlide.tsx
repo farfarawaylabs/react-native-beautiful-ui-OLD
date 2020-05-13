@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, ViewStyle, StyleProp, SafeAreaView } from 'react-native';
 import { Col } from '@farfarawaylabs/react-native-layout';
 
-interface IntroScreenSlideProps {
+export interface IntroScreenSlideProps {
   /** Determine if the slide should be displayed inside a SafeAreaView. If true, remember to set the slide
    * background color as well. Defaults to false.
    */

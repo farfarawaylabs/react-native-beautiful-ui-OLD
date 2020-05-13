@@ -16,7 +16,7 @@ export enum ButtonEffectType {
   None = 'none',
 }
 
-interface ButtonContainerProps {
+export interface ButtonContainerProps {
   effectType: ButtonEffectType;
   style?: StyleProp<ViewStyle>;
   onPress: () => void;

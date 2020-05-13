@@ -15,6 +15,7 @@ import AnimatedListItem from './components/general/listItems/AnimatedListItem';
 import Carousel from './components/general/Carousel/Carousel';
 import IntroScreen from './screens/IntroScreen/IntroScreen';
 import IntroScreenRegularSlide from './screens/IntroScreen/IntroScreenRegularSlide';
+import CarouselContext from './components/general/Carousel/CarouselContext';
 
 export {
   Overlay,
@@ -34,4 +35,5 @@ export {
   Carousel,
   IntroScreen,
   IntroScreenRegularSlide,
+  CarouselContext,
 };

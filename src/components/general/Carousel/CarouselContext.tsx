@@ -1,6 +1,6 @@
 import React, { createContext } from 'react';
 
-interface CarouselContextProps {
+export interface CarouselContextProps {
   selectedIndex?: number;
   numberOfSlides?: number;
   setNumberOfSlides?: (numberOfSlides: number) => void;

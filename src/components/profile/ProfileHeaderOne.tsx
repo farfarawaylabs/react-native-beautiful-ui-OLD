@@ -13,7 +13,7 @@ import { Avatar } from 'react-native-elements';
 
 const screenHeight = Dimensions.get('screen').height;
 
-interface ProfileHeaderOneProps {
+export interface ProfileHeaderOneProps {
   backgroundImage: ImageSourcePropType;
   avatar: ImageSourcePropType;
   name?: string;

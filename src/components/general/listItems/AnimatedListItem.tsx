@@ -48,7 +48,7 @@ const useListItemAnimation = (
   return { rowStyles, onRemove };
 };
 
-interface AnimatedListItemProps {
+export interface AnimatedListItemProps {
   /** Event handler to call after the remove animation ends.
   You will mostly use this to remove the current item from the state and the flatList */
   onRemoveAnimationEnded?: () => void;

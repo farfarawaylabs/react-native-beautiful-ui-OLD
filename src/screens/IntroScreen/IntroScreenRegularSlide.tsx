@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import IntroScreen from './IntroScreen';
 
-interface IntroScreenRegularSlideProps {
+export interface IntroScreenRegularSlideProps {
   /** The slide image */
   image: ImageSourcePropType;
 

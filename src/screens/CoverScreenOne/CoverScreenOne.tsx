@@ -3,7 +3,7 @@ import { StyleSheet, ViewStyle, ImageSourcePropType } from 'react-native';
 import BackgroundImageView from '../../components/general/BackgroundImageView';
 import { Col, Alignment } from '@farfarawaylabs/react-native-layout';
 
-interface CoverScreenOneProps {
+export interface CoverScreenOneProps {
   /** The image to use as the background of the cover screen */
   image: ImageSourcePropType;
 

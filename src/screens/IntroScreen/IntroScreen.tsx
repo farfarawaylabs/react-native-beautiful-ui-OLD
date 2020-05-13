@@ -11,7 +11,7 @@ import {
 } from './IntroScreenSections';
 import CarouselNavigation from 'src/components/general/Carousel/CarouselNavigation';
 
-interface IntroScreenProps {
+export interface IntroScreenProps {
   /** Should the screen display navigational dots on the bottom. Defautls to true */
   showDots?: boolean;
 
@@ -31,12 +31,10 @@ interface IntroScreenProps {
  * description
  */
 const Screen: React.FC<IntroScreenProps> = ({
-  style,
   children,
   dotColor = '#FFF',
   activeDotColor = '#232323',
   showDots = true,
-  ...rest
 }) => {
   return (
     <Carousel.Container>

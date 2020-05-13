@@ -6,7 +6,7 @@ import {
   ImageSourcePropType,
 } from 'react-native';
 
-interface BackgroundImageViewProps {
+export interface BackgroundImageViewProps {
   /** The image to display in the background of the view */
   image: ImageSourcePropType;
 

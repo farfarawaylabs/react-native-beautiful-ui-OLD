@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, StyleSheet, TextStyle, StyleProp } from 'react-native';
 
-interface IntroScreenTitleProps {
+export interface IntroScreenTitleProps {
   /** The title text */
   title: string;
 

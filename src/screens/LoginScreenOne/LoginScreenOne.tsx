@@ -45,7 +45,7 @@ const LoginScreenOneButtonsContainer: React.FC = ({ children, ...rest }) => {
   );
 };
 
-interface LoginScreenOneProps {
+export interface LoginScreenOneProps {
   /** The image to use as the background of the cover screen */
   backgroundImage: ImageSourcePropType;
   /**

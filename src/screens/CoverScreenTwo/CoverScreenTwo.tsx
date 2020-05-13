@@ -11,7 +11,7 @@ import BackgroundImageView from '../../components/general/BackgroundImageView';
 import { Center } from '@farfarawaylabs/react-native-layout';
 import { Button } from 'react-native-elements';
 
-interface CoverScreenTwoProps {
+export interface CoverScreenTwoProps {
   /** The image to use as the background of the cover screen */
   image: ImageSourcePropType;
 

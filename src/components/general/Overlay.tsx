@@ -31,7 +31,7 @@ type blurType =
   // tvOS only
   | 'extraDark';
 
-interface OverlayProps {
+export interface OverlayProps {
   /** Controls if the overlay is visible or not */
   visible: boolean;
 

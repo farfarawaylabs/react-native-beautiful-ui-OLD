@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, ViewStyle, Text, View, TextStyle } from 'react-native';
 import ButtonContainer, { ButtonEffectType } from './ButtonContainer';
 
-interface RoundedButtonProps {
+export interface RoundedButtonProps {
   /** The button title */
   title: string;
 

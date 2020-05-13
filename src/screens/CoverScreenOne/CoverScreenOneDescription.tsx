@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, StyleSheet, ViewStyle } from 'react-native';
 
-interface CoverScreenOneDescriptionProps {
+export interface CoverScreenOneDescriptionProps {
   /** The description text of the cover screen */
   description: string;
 

@@ -3,7 +3,7 @@ import { StyleSheet, StyleProp, ImageStyle } from 'react-native';
 import ImageButton from './ImageButton';
 import { ButtonEffectType } from './ButtonContainer';
 
-interface GoogleLoginButtonProps {
+export interface GoogleLoginButtonProps {
   /**
    * Additional styles or styles to override default style
    */

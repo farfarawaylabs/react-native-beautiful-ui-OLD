@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, StyleProp, ViewStyle } from 'react-native';
 import { Row, Col, Alignment } from '@farfarawaylabs/react-native-layout';
 
-interface IntroScreenSectionProps {
+export interface IntroScreenSectionProps {
   /** Additional styles or a way to override default styles */
   style?: StyleProp<ViewStyle>;
 

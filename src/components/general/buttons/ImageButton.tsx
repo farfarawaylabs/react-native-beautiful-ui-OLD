@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import ButtonContainer, { ButtonEffectType } from './ButtonContainer';
 
-interface ImageButtonProps {
+export interface ImageButtonProps {
   /** The image to display on the button */
   image: ImageSourcePropType;
 

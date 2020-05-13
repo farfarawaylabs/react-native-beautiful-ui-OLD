@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, ViewStyle, StyleProp } from 'react-native';
 import { Button, Icon } from 'react-native-elements';
 
-interface FacebookLoginButtonProps {
+export interface FacebookLoginButtonProps {
   /** The button title. Defaults to "Login with Facebook" */
   title?: string;
 

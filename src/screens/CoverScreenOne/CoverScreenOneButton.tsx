@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, ViewStyle, StyleProp, TextStyle } from 'react-native';
 import { Button } from 'react-native-elements';
 
-interface CoverScreenOneButtonProps {
+export interface CoverScreenOneButtonProps {
   /** The title of the button */
   title: string;
 
