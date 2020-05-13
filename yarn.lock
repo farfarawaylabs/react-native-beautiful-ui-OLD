@@ -1115,10 +1115,10 @@
   resolved "https://registry.yarnpkg.com/@farfarawaylabs/react-native-hooks/-/react-native-hooks-0.1.0.tgz#a1814ba157d030609b2b6b8257c04960726faac3"
   integrity sha512-/VYlB2aBqFmdzPwmfIZYwUtD+0hHHih8YHQxw6/8JGNQF39esd6rkiHdvwGkHsAu6qe9wqlWs6iZB1g0Kk9r7A==
 
-"@farfarawaylabs/react-native-layout@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@farfarawaylabs/react-native-layout/-/react-native-layout-1.0.1.tgz#4ca93b7d93023c965975cbd15707599cd0212ac0"
-  integrity sha512-K9tM9gkxjDTmy3QrSt0MTgRdOZutNMne3pkCp/zbbw2JgxjrIXgKHgnluXPrDA2ANws2/tfKHodwvBeQ5yChZw==
+"@farfarawaylabs/react-native-layout@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@farfarawaylabs/react-native-layout/-/react-native-layout-1.0.3.tgz#efa2b96bf4fccf27bffcc29212c66f970e856659"
+  integrity sha512-wfnmm9ZwUnVkL2U67VfL0psAnTATBIql+DDqUFPmfKZtNjejKLU0F+J07ugYy9PuXEdw8NQyemXOF7nv+ziJwA==
 
 "@hapi/address@2.x.x":
   version "2.1.4"

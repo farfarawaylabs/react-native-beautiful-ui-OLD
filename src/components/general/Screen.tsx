@@ -8,7 +8,7 @@ import {
   ViewStyle,
   ImageSourcePropType,
 } from 'react-native';
-import { useSafeArea } from 'react-native-safe-area-context';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export interface ScreenInterface extends ViewProps {
   /* The name of the screen. Can be used after that to report to analytics **/
@@ -33,9 +33,9 @@ export interface ScreenInterface extends ViewProps {
   /** Any additional style you want to use to add to or override the default style */
   style?: StyleProp<ViewStyle>;
 }
+
 /**
  * Simple control that encapsulate common beahvior for all screens such as analytics reporting
- * @param {Object} props props to be merged to the screen control
  */
 const Screen: React.FC<ScreenInterface> = ({
   shouldUseSafeArea = true,
@@ -58,7 +58,7 @@ const Screen: React.FC<ScreenInterface> = ({
     }
   }, [navigation, name, onFocus]);
 
-  const insets = useSafeArea();
+  const insets = useSafeAreaInsets();
 
   const paddingTop =
     shouldUseSafeArea && !backgroundImage

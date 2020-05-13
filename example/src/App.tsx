@@ -25,6 +25,9 @@ import {
   Carousel,
   IntroScreen,
   IntroScreenRegularSlide,
+  Screen,
+  Spinner,
+  AskPermissionScreen,
 } from '@farfarawaylabs/react-native-beautiful-ui';
 import {
   Center,
@@ -32,9 +35,14 @@ import {
   Row,
   Alignment,
 } from '@farfarawaylabs/react-native-layout';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 export default function App() {
-  return <ShowIntroScreen />;
+  return (
+    <SafeAreaProvider>
+      <ShowAskPermissionScreen />
+    </SafeAreaProvider>
+  );
 }
 
 const ShowOverlay = () => {
@@ -282,5 +290,24 @@ const ShowIntroScreen = () => {
         </Center>
       </IntroScreenRegularSlide>
     </IntroScreen.Screen>
+  );
+};
+
+const ShowScreenWithSpinner = () => {
+  return (
+    <Screen name="demo_screen">
+      <Spinner size="large" color="pink" isVisible={false} />
+    </Screen>
+  );
+};
+
+const ShowAskPermissionScreen = () => {
+  const demoImage = require('../demoImages/notificationsDemo.png');
+  return (
+    <AskPermissionScreen
+      image={demoImage}
+      title="Stay In The Know"
+      description="Enable notifications and make sure you always stay up to date with important updates from your network"
+    />
   );
 };

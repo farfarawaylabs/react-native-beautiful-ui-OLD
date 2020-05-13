@@ -17,6 +17,8 @@ import IntroScreen from './screens/IntroScreen/IntroScreen';
 import IntroScreenRegularSlide from './screens/IntroScreen/IntroScreenRegularSlide';
 import CarouselContext from './components/general/Carousel/CarouselContext';
 import Screen from './components/general/Screen';
+import Spinner from './components/general/Spinner';
+import AskPermissionScreen from './screens/AskPermissionScreen/AskPermissionScreen';
 
 export {
   Overlay,
@@ -38,4 +40,6 @@ export {
   IntroScreenRegularSlide,
   CarouselContext,
   Screen,
+  Spinner,
+  AskPermissionScreen,
 };

@@ -10,6 +10,8 @@ npm install @farfarawaylabs/react-native-beautiful-ui
 
 You should also install react-native-elements (https://react-native-elements.github.io/)
 
+If you plan on using the screen component, you should also install react-native-safe-area-context library (https://github.com/th3rdwave/react-native-safe-area-context) for better safe area handling (recommended anyways).
+
 This package is also using our own Layout package which you can find here: https://github.com/farfarawaylabs/react-native-layout
 
 ## Components in this library:
@@ -508,6 +510,56 @@ export default function App() {
         </Center>
       </IntroScreenRegularSlide>
     </IntroScreen.Screen>
+  );
+}
+```
+
+## AskPermissionsScreen
+
+Almost all apps require to get user permissions for things like notifications or location services access. Although you can always just popup the OS built in permissions dialog, a better way is to first show the user a dialog/screen with more information on why your app is asking for the permission.
+This screen allows you to easily show a well designed such dialog. If the user press the approve button, then popup the OS dialog to actually get the permission.
+
+Props:
+
+- image: The image to display on top of the screen
+
+- title: The title of the screen
+
+- description: The longer description of the screen
+
+- titleStyle: Additional styles or override default styles of the title of the screen
+
+- descriptionStyle: Additional styles or override default styles of the description of the screen
+
+- approveButtonTitle: The title of the approve permission button. Defaults to "Let's do it"
+
+- rejectButtonTitle: The title of the reject permission button. Defaults to "Maybe next time"
+
+- approveButton: A way to provide your own custom approve button
+
+- rejectButton: A way to provide your own custom reject button
+
+- backgroundColor: The background color of the screen
+
+- onApprove: Event handler to call if the user presses the approve button
+
+- onReject: Event handler to call if the user presses the reject button
+
+<img width="300" height="600" src="https://github.com/nechmads/demo_images/blob/master/fflabs_react-native-beautiful-ui/AskpermissionScreen.png?raw=true">
+
+```js
+import React, { useState } from 'react';
+import { AskPermissionScreen } from '@farfarawaylabs/react-native-beautiful-ui';
+
+export default function App() {
+  const demoImage = require('../demoImages/notificationsDemo.png');
+
+  return (
+    <AskPermissionScreen
+      image={demoImage}
+      title="Stay In The Know"
+      description="Enable notifications and make sure you always stay up to date with important updates from your network"
+    />
   );
 }
 ```
