@@ -574,7 +574,7 @@ Props:
 
 - onReject: Event handler to call if the user presses the reject button
 
-<img width="300" height="600" src="https://github.com/nechmads/demo_images/blob/master/fflabs_react-native-beautiful-ui/AskpermissionScreen.png?raw=true">
+<img width="300" height="600" src="https://github.com/nechmads/demo_images/blob/master/fflabs_react-native-beautiful-ui/AskPermissionScreen.png?raw=true">
 
 ```js
 import React, { useState } from 'react';
