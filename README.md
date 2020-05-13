@@ -15,19 +15,19 @@ This package is also using our own Layout package which you can find here: https
 ## Components in this library:
 
 - [Overlay](#overlay)
-- [Rounded Button](#rounded_button)
-- [Social Buttons](#social_buttons)
-- [BackgroundImageView](#background_image_view)
+- [Rounded Button](#rounded-button)
+- [Social Buttons](#social-buttons)
+- [BackgroundImageView](#backgroundimageview)
 - [Screen](#screen)
-- [AnimatedListItem](#animated_list_item)
+- [AnimatedListItem](#animatedlistitem)
 - [Carousel](#carousel)
 
 ## Screens in this library:
 
-- [CoverScreenOne](#cover_screen_one)
-- [CoverScreenTwo](#cover_screen_two)
-- [LoginScreenOne](#login_screen_one)
-- [IntroScreen](#intro_screen)
+- [CoverScreenOne](#coverscreenone)
+- [CoverScreenTwo](#coverscreentwo)
+- [LoginScreenOne](#loginscreenone)
+- [IntroScreen](#introscreen)
 
 ## Overlay
 
