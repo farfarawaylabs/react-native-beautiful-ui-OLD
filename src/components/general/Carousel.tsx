@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, memo } from 'react';
 import {
   View,
   StyleSheet,
@@ -50,17 +50,7 @@ const Carousel: React.FC<CarouselProps> = ({
   showDots = true,
   ...rest
 }) => {
-  const selectedIndex = useRef(selectedSlide);
-
-  const moveToSelectedIndex = (
-    event: NativeSyntheticEvent<NativeScrollEvent>
-  ) => {
-    const contentOffset = event.nativeEvent.contentOffset;
-    const viewSize = event.nativeEvent.layoutMeasurement;
-
-    const newIndex = Math.floor(contentOffset.x / viewSize.width);
-    selectedIndex.current = newIndex;
-  };
+  const [selectedIndex, setSelectedIndex] = useState(selectedSlide);
 
   let carouselPageWidth: number;
   if (typeof width === 'string') {
@@ -76,25 +66,18 @@ const Carousel: React.FC<CarouselProps> = ({
       style={[{ width: carouselPageWidth, height: height }, style]}
       {...rest}
     >
-      <ScrollView
-        horizontal
-        pagingEnabled
-        onMomentumScrollEnd={moveToSelectedIndex}
+      <CarouselBody
+        height={height}
+        width={carouselPageWidth}
+        onSelectedIndexChanged={(newIndex) => setSelectedIndex(newIndex)}
       >
-        {React.Children.map(children, (currChild: any) => {
-          return React.cloneElement(currChild, {
-            style: [
-              { width: carouselPageWidth, height: height },
-              currChild.props.style,
-            ],
-          });
-        })}
-      </ScrollView>
+        {children}
+      </CarouselBody>
 
       {showDots && (
         <NavigationalDots
           numberOfDots={React.Children.count(children)}
-          selectedIndex={selectedIndex.current}
+          selectedIndex={selectedIndex}
           dotColor={dotColor}
           activeDotColor={activeDotColor}
         />
@@ -102,6 +85,37 @@ const Carousel: React.FC<CarouselProps> = ({
     </View>
   );
 };
+
+const CarouselBody: React.FC<{
+  onSelectedIndexChanged: (newIndex: number) => void;
+  width: number | string;
+  height: number | string;
+}> = memo(({ onSelectedIndexChanged, width, height, children }) => {
+  const moveToSelectedIndex = (
+    event: NativeSyntheticEvent<NativeScrollEvent>
+  ) => {
+    const contentOffset = event.nativeEvent.contentOffset;
+    const viewSize = event.nativeEvent.layoutMeasurement;
+
+    const newIndex = Math.floor(contentOffset.x / viewSize.width);
+
+    onSelectedIndexChanged(newIndex);
+  };
+
+  return (
+    <ScrollView
+      horizontal
+      pagingEnabled
+      onMomentumScrollEnd={moveToSelectedIndex}
+    >
+      {React.Children.map(children, (currChild: any) => {
+        return React.cloneElement(currChild, {
+          style: [{ width: width, height: height }, currChild.props.style],
+        });
+      })}
+    </ScrollView>
+  );
+});
 
 const NavigationalDots: React.FC<{
   numberOfDots: number;
@@ -131,7 +145,7 @@ const styles = StyleSheet.create({
   },
   circleDiv: {
     position: 'absolute',
-    bottom: 15,
+    bottom: 30,
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
@@ -140,14 +154,15 @@ const styles = StyleSheet.create({
     height: 10,
   },
   dot: {
-    width: 6,
-    height: 6,
-    borderRadius: 3,
+    width: 12,
+    height: 12,
+    borderRadius: 6,
     margin: 5,
   },
   selectedDot: {
-    height: 8,
-    width: 8,
+    height: 14,
+    width: 14,
+    borderRadius: 7,
   },
 });
 
