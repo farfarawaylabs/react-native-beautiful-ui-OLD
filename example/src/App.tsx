@@ -234,11 +234,14 @@ const ShowCarousel = () => {
   const demoBgImage = require('../demoImages/demoBG.jpg');
   return (
     <Center horizontal vertical>
-      <Carousel width={400} height={400}>
-        <Image source={demoBgImage} />
-        <Image source={demoBgImage} />
-        <Image source={demoBgImage} />
-      </Carousel>
+      <Carousel.Container width={400} height={400}>
+        <Carousel.Slides>
+          <Image source={demoBgImage} />
+          <Image source={demoBgImage} />
+          <Image source={demoBgImage} />
+        </Carousel.Slides>
+        <Carousel.Navigation />
+      </Carousel.Container>
     </Center>
   );
 };

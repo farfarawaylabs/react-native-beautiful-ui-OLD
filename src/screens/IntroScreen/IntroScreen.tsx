@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyleSheet, ViewStyle, SafeAreaView, StyleProp } from 'react-native';
-import Carousel from '../../components/general/Carousel';
+import { StyleSheet, ViewStyle, StyleProp } from 'react-native';
+import Carousel from '../../components/general/Carousel/Carousel';
 import IntroScreenSlide from './IntroScreenSlide';
 import IntroScreenTitle from './IntroScreenTitle';
 import IntroScreenSubtitle from './IntroScreenSubtitle';
@@ -9,6 +9,7 @@ import {
   IntroScreenTitleSection,
   IntroScreenAdditionalContentSection,
 } from './IntroScreenSections';
+import CarouselNavigation from 'src/components/general/Carousel/CarouselNavigation';
 
 interface IntroScreenProps {
   /** Should the screen display navigational dots on the bottom. Defautls to true */
@@ -34,17 +35,16 @@ const Screen: React.FC<IntroScreenProps> = ({
   children,
   dotColor = '#FFF',
   activeDotColor = '#232323',
-  showDots = true,
   ...rest
 }) => {
   return (
-    <Carousel
-      dotColor={dotColor}
-      activeDotColor={activeDotColor}
-      showDots={showDots}
-    >
-      {children}
-    </Carousel>
+    <Carousel.Container>
+      <Carousel.Slides>{children}</Carousel.Slides>
+      <Carousel.Navigation
+        dotColor={dotColor}
+        activeDotColor={activeDotColor}
+      />
+    </Carousel.Container>
   );
 };
 
