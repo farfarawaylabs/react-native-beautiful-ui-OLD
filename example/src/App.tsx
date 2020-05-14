@@ -28,6 +28,8 @@ import {
   Screen,
   Spinner,
   AskPermissionScreen,
+  Styles,
+  Typography,
 } from '@farfarawaylabs/react-native-beautiful-ui';
 import {
   Center,
@@ -40,7 +42,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 export default function App() {
   return (
     <SafeAreaProvider>
-      <ShowAskPermissionScreen />
+      <ShowStyles />
     </SafeAreaProvider>
   );
 }
@@ -309,5 +311,52 @@ const ShowAskPermissionScreen = () => {
       title="Stay In The Know"
       description="Enable notifications and make sure you always stay up to date with important updates from your network"
     />
+  );
+};
+
+const ShowStyles = () => {
+  return (
+    <Screen>
+      <Row>
+        <Col>
+          <View style={Styles.MainTheme.screenHeader}>
+            <Text style={Styles.MainTheme.screenTitle}>Screen Title</Text>
+          </View>
+          <View style={Styles.MainTheme.defaultScreenHorizontalMargin}>
+            <Text style={Styles.MainTheme.title}>Title</Text>
+            <Text style={Styles.MainTheme.subTitle}>Subtitle</Text>
+            <Text style={Styles.MainTheme.paragraph}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum
+            </Text>
+          </View>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <View style={Styles.MainTheme.screenHeader}>
+            <Typography.ScreenTitle>Screen Title</Typography.ScreenTitle>
+          </View>
+          <View style={Styles.MainTheme.defaultScreenHorizontalMargin}>
+            <Typography.Title>Title</Typography.Title>
+            <Typography.Subtitle>Subtitle</Typography.Subtitle>
+            <Typography.Paragraph>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum
+            </Typography.Paragraph>
+          </View>
+        </Col>
+      </Row>
+    </Screen>
   );
 };

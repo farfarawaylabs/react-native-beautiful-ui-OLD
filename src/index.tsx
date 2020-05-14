@@ -19,6 +19,8 @@ import CarouselContext from './components/general/Carousel/CarouselContext';
 import Screen from './components/general/Screen';
 import Spinner from './components/general/Spinner';
 import AskPermissionScreen from './screens/AskPermissionScreen/AskPermissionScreen';
+import Styles from './styles';
+import Typography from './components/typography/Typography';
 
 export {
   Overlay,
@@ -42,4 +44,6 @@ export {
   Screen,
   Spinner,
   AskPermissionScreen,
+  Styles,
+  Typography,
 };

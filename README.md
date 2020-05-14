@@ -14,6 +14,10 @@ If you plan on using the screen component, you should also install react-native-
 
 This package is also using our own Layout package which you can find here: https://github.com/farfarawaylabs/react-native-layout
 
+## Example
+
+Under the exampel folder you will find a project you can run on your phone or simulator. The file App.tsx has one function for each component. Simply call it to showcase a demo of that component.
+
 ## Components in this library:
 
 - [Overlay](#overlay)
@@ -24,6 +28,7 @@ This package is also using our own Layout package which you can find here: https
 - [Screen](#screen)
 - [AnimatedListItem](#animatedlistitem)
 - [Carousel](#carousel)
+- [Typography](#typography)
 
 ## Screens in this library:
 
@@ -347,6 +352,71 @@ export default function App() {
         <Carousel.Navigation />
       </Carousel.Container>
     </Center>
+  );
+}
+```
+
+## Typography
+
+Sensible typography components and styles which are responsive related to the screen height. If you see the screenshots following this text you can notice that although they were taken on the iPhoneX and iPhone SE whcih is a lot shorter, all the text went into the screen on both devices.
+
+See code example for two ways you can use these in your apps: Directly through styles or through compoenets that basically wrap the React Native Text compoenent and apply these styles to it.
+
+Note that as for React Native 0.62 there is a bug on Android that allow just for one type of bold strength to be set on text which is why both the screen title and the title has the same amount of bold on Android but different on iOS.
+
+<img width="300" height="600" src="https://github.com/nechmads/demo_images/blob/master/fflabs_react-native-beautiful-ui/Typography.png?raw=true">
+<img width="300" height="600" src="https://github.com/nechmads/demo_images/blob/master/fflabs_react-native-beautiful-ui/Typography2.png?raw=true">
+
+```js
+import React, { useState } from 'react';
+import { Typography, Styles } from '@farfarawaylabs/react-native-beautiful-ui';
+import { View, Text } from 'react-native';
+
+export default function App() {
+  const demoBgImage = require('../demoImages/demoBG.jpg');
+  return (
+    <Screen>
+      <Row>
+        <Col>
+          <View style={Styles.MainTheme.screenHeader}>
+            <Text style={Styles.MainTheme.screenTitle}>Screen Title</Text>
+          </View>
+          <View style={Styles.MainTheme.defaultScreenHorizontalMargin}>
+            <Text style={Styles.MainTheme.title}>Title</Text>
+            <Text style={Styles.MainTheme.subTitle}>Subtitle</Text>
+            <Text style={Styles.MainTheme.paragraph}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum
+            </Text>
+          </View>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <View style={Styles.MainTheme.screenHeader}>
+            <Typography.ScreenTitle>Screen Title</Typography.ScreenTitle>
+          </View>
+          <View style={Styles.MainTheme.defaultScreenHorizontalMargin}>
+            <Typography.Title>Title</Typography.Title>
+            <Typography.Subtitle>Subtitle</Typography.Subtitle>
+            <Typography.Paragraph>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum
+            </Typography.Paragraph>
+          </View>
+        </Col>
+      </Row>
+    </Screen>
   );
 }
 ```
