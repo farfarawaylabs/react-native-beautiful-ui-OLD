@@ -3,7 +3,7 @@ PODS:
   - CocoaAsyncSocket (7.6.4)
   - CocoaLibEvent (1.0.0)
   - DoubleConversion (1.1.6)
-  - farfarawaylabs-react-native-beautiful-ui (0.3.0):
+  - farfarawaylabs-react-native-beautiful-ui (0.4.1):
     - React
   - farfarawaylabs-react-native-layout (1.0.0):
     - React
@@ -428,7 +428,7 @@ SPEC CHECKSUMS:
   CocoaAsyncSocket: 694058e7c0ed05a9e217d1b3c7ded962f4180845
   CocoaLibEvent: 2fab71b8bd46dd33ddb959f7928ec5909f838e3f
   DoubleConversion: 5805e889d232975c086db112ece9ed034df7a0b2
-  farfarawaylabs-react-native-beautiful-ui: e40d0906efbb3f31733c26859871bb9f111175da
+  farfarawaylabs-react-native-beautiful-ui: 39d0151e867d46a214e222e9c2ecae786ea37a36
   farfarawaylabs-react-native-layout: 9a96bcc358438b40981ac211dd969172c4919461
   FBLazyVector: 545eccf4f6ef2de8fd450fd8a1edb3f913c7371a
   FBReactNativeSpec: 85c7f8347f4a6e911742228e89e245187afa298e

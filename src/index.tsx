@@ -21,6 +21,7 @@ import Spinner from './components/general/Spinner';
 import AskPermissionScreen from './screens/AskPermissionScreen/AskPermissionScreen';
 import Styles from './styles';
 import Typography from './components/typography/Typography';
+import IconButton from './components/general/buttons/IconButton';
 
 export {
   Overlay,
@@ -46,4 +47,5 @@ export {
   AskPermissionScreen,
   Styles,
   Typography,
+  IconButton,
 };

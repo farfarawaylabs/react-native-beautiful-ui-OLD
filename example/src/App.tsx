@@ -30,6 +30,7 @@ import {
   AskPermissionScreen,
   Styles,
   Typography,
+  IconButton,
 } from '@farfarawaylabs/react-native-beautiful-ui';
 import {
   Center,
@@ -42,7 +43,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 export default function App() {
   return (
     <SafeAreaProvider>
-      <ShowStyles />
+      <ShowIconButton />
     </SafeAreaProvider>
   );
 }
@@ -310,6 +311,19 @@ const ShowAskPermissionScreen = () => {
       image={demoImage}
       title="Stay In The Know"
       description="Enable notifications and make sure you always stay up to date with important updates from your network"
+    />
+  );
+};
+
+const ShowIconButton = () => {
+  return (
+    <IconButton
+      type="material"
+      name="bookmark-border"
+      size={32}
+      color="red"
+      effectType={ButtonEffectType.Opacity}
+      onPress={() => {}}
     />
   );
 };

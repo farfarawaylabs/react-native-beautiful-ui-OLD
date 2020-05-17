@@ -30,7 +30,7 @@ export interface ImageButtonProps {
 }
 
 /**
- * description
+ * An Image based button
  */
 const ImageButton: React.FC<ImageButtonProps> = ({
   image,

@@ -23,6 +23,7 @@ Under the exampel folder you will find a project you can run on your phone or si
 - [Overlay](#overlay)
 - [Rounded Button](#rounded-button)
 - [Social Buttons](#social-buttons)
+- [IconButton and ImageButton](#icon-button)
 - [Spinner](#spinner)
 - [BackgroundImageView](#backgroundimageview)
 - [Screen](#screen)
@@ -153,6 +154,36 @@ export default function App() {
   );
 }
 ```
+
+## IconButton and ImageButton
+
+```js
+import React, { useState } from 'react';
+import {
+  IconButton,
+  ImageButton,
+} from '@farfarawaylabs/react-native-beautiful-ui';
+
+import { View } from 'react-native';
+
+export default function App() {
+  const demoBgImage = require('../demoImages/demoBG.jpg');
+  return (
+    <Center horizontal vertical>
+      <IconButton
+        type="material"
+        name="bookmark-border"
+        size={32}
+        color="red"
+        effectType={ButtonEffectType.Opacity}
+        onPress={() => {}}
+      />
+    </Center>
+  );
+}
+```
+
+Simple wrapper compoenents to display an image or icon based buttons.
 
 ## Spinner
 
